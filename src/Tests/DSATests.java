@@ -42,7 +42,7 @@ class DSATests {
 		@Test
 		@DisplayName("Return true if the three values are evenly spaced")
 		void testEvenlySpaced() {
-			assertAll(() -> assertTrue(evenly.evenlySpaced(4, 6, 3), "Evenly Spaced if returns true"),
+			assertAll(() -> assertFalse(evenly.evenlySpaced(4, 6, 3), "Evenly Spaced if returns true"),
 					() -> assertTrue(evenly.evenlySpaced(2, 4, 6), "Evenly Spaced if returns true"),
 					() -> assertTrue(evenly.evenlySpaced(4, 6, 2), "Evenly Spaced if returns true"));
 		}
