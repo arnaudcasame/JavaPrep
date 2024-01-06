@@ -176,14 +176,14 @@ class DSATests {
 		@Test
 		@DisplayName("Return List where each integer is doubled")
 		void returnListWhereEachIntegerIsDoubled() {
-			assertAll(() -> assertEquals(Arrays.asList(new Integer[]{2, 4, 6}), functionalMapping.doubling(Arrays.asList(new Integer[]{1, 2, 3}))),
-					() -> assertEquals(Arrays.asList(new Integer[]{12, 16, 12, 16, -2}), functionalMapping.doubling(Arrays.asList(new Integer[]{6, 8, 6, 8, -1}))),
-					() -> assertEquals(List.of(), functionalMapping.doubling(List.of())),
-					() -> assertEquals(Arrays.asList(new Integer[]{10}), functionalMapping.doubling(Arrays.asList(new Integer[]{5}))),
-					() -> assertEquals(Arrays.asList(new Integer[]{10, 20}), functionalMapping.doubling(Arrays.asList(new Integer[]{5, 10}))),
-					() -> assertEquals(Arrays.asList(new Integer[]{16, -10, 14, 6, 218}), functionalMapping.doubling(Arrays.asList(new Integer[]{8, -5, 7, 3, 109}))),
-					() -> assertEquals(Arrays.asList(new Integer[]{12, -6, 24, 46, 8, 2, 38, 22, 4, 6, 4}), functionalMapping.doubling(Arrays.asList(new Integer[]{6, -3, 12, 23, 4, 1, 19, 11, 2, 3, 2}))),
-					() -> assertEquals(Arrays.asList(new Integer[]{6, 2, 8, 2, 10, 18}), functionalMapping.doubling(Arrays.asList(new Integer[]{3, 1, 4, 1, 5, 9}))));
+			assertAll(() -> assertArrayEquals(Arrays.asList(new Integer[]{2, 4, 6}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{1, 2, 3})).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{12, 16, 12, 16, -2}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{6, 8, 6, 8, -1})).toArray()),
+					() -> assertArrayEquals(List.of().toArray(), functionalMapping.doubling(List.of()).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{10}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{5})).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{10, 20}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{5, 10})).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{16, -10, 14, 6, 218}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{8, -5, 7, 3, 109})).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{12, -6, 24, 46, 8, 2, 38, 22, 4, 6, 4}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{6, -3, 12, 23, 4, 1, 19, 11, 2, 3, 2})).toArray()),
+					() -> assertArrayEquals(Arrays.asList(new Integer[]{6, 2, 8, 2, 10, 18}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{3, 1, 4, 1, 5, 9})).toArray()));
 		}
 	}
 
