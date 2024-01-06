@@ -1,7 +1,7 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
-import PrepApp.codingbat.MakeBricks.MakeBricks;
+import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
 import PrepApp.leetcode.MaximumProfit.MaximumProfit;
 import PrepApp.codingbat.BlackJack.BlackJack;
@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Nested;
 class DSATests {
 
 	private EvenlySpaced evenly;
-	private MakeBricks brickMaker;
+	private StuffMaker stuffMaker;
 	private MaximumProfit profitCalculator;
 	private NoTeenSum sumCalculator;
 	private BlackJack jackCalculator;
@@ -31,7 +31,7 @@ class DSATests {
 		@BeforeEach
 		void setUp() {
 			evenly = new EvenlySpaced();
-			brickMaker = new MakeBricks();
+			stuffMaker = new StuffMaker();
 			profitCalculator = new MaximumProfit();
 			sumCalculator = new NoTeenSum();
 			jackCalculator = new BlackJack();
@@ -49,9 +49,9 @@ class DSATests {
 		@Test
 		@DisplayName("Row of bricks that is goal inches long")
 		void testBrickMaking() {
-			assertAll(() -> assertTrue(brickMaker.makeBricks(3, 1, 8)),
-					() -> assertTrue(brickMaker.makeBricks(3, 1, 9)),
-					() -> assertTrue(brickMaker.makeBricks(3, 2, 10)));
+			assertAll(() -> assertTrue(stuffMaker.makeBricks(3, 1, 8)),
+					() -> assertTrue(stuffMaker.makeBricks(3, 1, 9)),
+					() -> assertTrue(stuffMaker.makeBricks(3, 2, 10)));
 		}
 
 		@Test
@@ -135,6 +135,35 @@ class DSATests {
 					() -> assertFalse(calculator.closeFar(8, 9, 10)),
 					() -> assertFalse(calculator.closeFar(8, 9, 7)),
 					() -> assertTrue(calculator.closeFar(8, 6, 9)));
+		}
+
+		@Test
+		@DisplayName("Number of small bars to use or -1, can't be done")
+		void numberOfSmallBarsToUseOr1CanTBeDone() {
+			assertAll(() -> assertEquals(4, stuffMaker.makeChocolate(4, 1, 9)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(4, 1, 10)),
+					() -> assertEquals(2, stuffMaker.makeChocolate(4, 1, 7)),
+					() -> assertEquals(2, stuffMaker.makeChocolate(6, 2, 7)),
+					() -> assertEquals(0, stuffMaker.makeChocolate(4, 1, 5)),
+					() -> assertEquals(4, stuffMaker.makeChocolate(4, 1, 4)),
+					() -> assertEquals(4, stuffMaker.makeChocolate(5, 4, 9)),
+					() -> assertEquals(3, stuffMaker.makeChocolate(9, 3, 18)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(3, 1, 9)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(1, 2, 7)),
+					() -> assertEquals(1, stuffMaker.makeChocolate(1, 2, 6)),
+					() -> assertEquals(0, stuffMaker.makeChocolate(1, 2, 5)),
+					() -> assertEquals(5, stuffMaker.makeChocolate(6, 1, 10)),
+					() -> assertEquals(6, stuffMaker.makeChocolate(6, 1, 11)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(6, 1, 12)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(6, 1, 13)),
+					() -> assertEquals(0, stuffMaker.makeChocolate(6, 2, 10)),
+					() -> assertEquals(1, stuffMaker.makeChocolate(6, 2, 11)),
+					() -> assertEquals(2, stuffMaker.makeChocolate(6, 2, 12)),
+					() -> assertEquals(50, stuffMaker.makeChocolate(60, 100, 550)),
+					() -> assertEquals(6, stuffMaker.makeChocolate(1000, 1000000, 5000006)),
+					() -> assertEquals(7, stuffMaker.makeChocolate(7, 1, 12)),
+					() -> assertEquals(-1, stuffMaker.makeChocolate(7, 1, 13)),
+					() -> assertEquals(3, stuffMaker.makeChocolate(7, 2, 13)));
 		}
 	}
 
