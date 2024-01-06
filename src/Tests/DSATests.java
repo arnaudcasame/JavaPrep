@@ -11,7 +11,6 @@ import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
 
@@ -94,6 +93,30 @@ class DSATests {
 					() -> assertEquals(14, calculator.loneSum(2, 9, 3)),
 					() -> assertEquals(9, calculator.loneSum(4, 2, 3)),
 					() -> assertEquals(3, calculator.loneSum(1, 3, 1)));
+		}
+
+		@Test
+		@DisplayName("Sum of round up/down values!")
+		void sumOfRoundUpDownValues() {
+			assertAll(() -> assertEquals(60, calculator.roundSum(16, 17, 18)),
+					() -> assertEquals(30, calculator.roundSum(12, 13, 14)),
+					() -> assertEquals(10, calculator.roundSum(6, 4, 4)),
+					() -> assertEquals(20, calculator.roundSum(4, 6, 5)),
+					() -> assertEquals(10, calculator.roundSum(4, 4, 6)),
+					() -> assertEquals(10, calculator.roundSum(9, 4, 4)),
+					() -> assertEquals(0, calculator.roundSum(0, 0, 1)),
+					() -> assertEquals(10, calculator.roundSum(0, 9, 0)),
+					() -> assertEquals(40, calculator.roundSum(10, 10, 19)),
+					() -> assertEquals(90, calculator.roundSum(20, 30, 40)),
+					() -> assertEquals(100, calculator.roundSum(45, 21, 30)),
+					() -> assertEquals(60, calculator.roundSum(23, 11, 26)),
+					() -> assertEquals(70, calculator.roundSum(23, 24, 25)),
+					() -> assertEquals(80, calculator.roundSum(25, 24, 25)),
+					() -> assertEquals(70, calculator.roundSum(23, 24, 29)),
+					() -> assertEquals(70, calculator.roundSum(11, 24, 36)),
+					() -> assertEquals(90, calculator.roundSum(24, 36, 32)),
+					() -> assertEquals(50, calculator.roundSum(14, 12, 26)),
+					() -> assertEquals(40, calculator.roundSum(12, 10, 24)));
 		}
 	}
 
