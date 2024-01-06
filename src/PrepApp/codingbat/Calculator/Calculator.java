@@ -9,4 +9,8 @@ public class Calculator {
     public int roundSum(int a, int b, int c){
         return 0;
     }
+
+    public boolean closeFar(int a, int b, int c){
+        return false;
+    }
 }

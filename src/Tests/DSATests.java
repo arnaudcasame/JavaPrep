@@ -118,6 +118,24 @@ class DSATests {
 					() -> assertEquals(50, calculator.roundSum(14, 12, 26)),
 					() -> assertEquals(40, calculator.roundSum(12, 10, 24)));
 		}
+
+		@Test
+		@DisplayName("Given 3 ints find 2 Close & 1 Far")
+		void given3IntsFind2Close1Far() {
+
+			assertAll(() -> assertTrue(calculator.closeFar(1, 2, 10)),
+					() -> assertFalse(calculator.closeFar(1, 2, 3)),
+					() -> assertTrue(calculator.closeFar(4, 1, 3)),
+					() -> assertFalse(calculator.closeFar(4, 5, 3)),
+					() -> assertFalse(calculator.closeFar(4, 3, 5)),
+					() -> assertTrue(calculator.closeFar(-1, 10, 0)),
+					() -> assertTrue(calculator.closeFar(0, -1, 10)),
+					() -> assertTrue(calculator.closeFar(10, 10, 8)),
+					() -> assertFalse(calculator.closeFar(10, 8, 9)),
+					() -> assertFalse(calculator.closeFar(8, 9, 10)),
+					() -> assertFalse(calculator.closeFar(8, 9, 7)),
+					() -> assertTrue(calculator.closeFar(8, 6, 9)));
+		}
 	}
 
     @Nested
@@ -138,3 +156,4 @@ class DSATests {
 	}
 
 }
+
