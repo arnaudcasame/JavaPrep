@@ -221,7 +221,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Arithmetic Slides II - Subsequence - 446")
 		void arithmeticSlidesIiSubsequence446() {
 			assertAll(() -> assertEquals(7, calculator.numberOfArithmeticSlices(new int[]{2, 4, 6, 8, 10})),
