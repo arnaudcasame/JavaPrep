@@ -22,24 +22,24 @@ import java.util.List;
 
 class DSATests {
 
-	private EvenlySpaced evenly;
-	private StuffMaker stuffMaker;
-	private MaximumProfit profitCalculator;
-	private NoTeenSum sumCalculator;
-	private BlackJack jackCalculator;
-
-	private Calculator calculator;
-
-	private FunctionalMapping functionalMapping;
-
 	@Nested
 	@DisplayName("CodingBat")
 	class CodingBat {
+
+		private EvenlySpaced evenly;
+		private StuffMaker stuffMaker;
+		private NoTeenSum sumCalculator;
+		private BlackJack jackCalculator;
+
+		private Calculator calculator;
+
+		private FunctionalMapping functionalMapping;
+
+
 		@BeforeEach
 		void setUp() {
 			evenly = new EvenlySpaced();
 			stuffMaker = new StuffMaker();
-			profitCalculator = new MaximumProfit();
 			sumCalculator = new NoTeenSum();
 			jackCalculator = new BlackJack();
 			calculator = new Calculator();
@@ -193,6 +193,7 @@ class DSATests {
 	class LeetCode {
 
 		private StringOperator stringOperator;
+		private MaximumProfit profitCalculator;
 
 		@BeforeEach
 		void setUp() {
