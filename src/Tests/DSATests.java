@@ -44,6 +44,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return true if the three values are evenly spaced")
 		void testEvenlySpaced() {
 			assertAll(() -> assertFalse(evenly.evenlySpaced(4, 6, 3), "Evenly Spaced if returns true"),
@@ -52,6 +53,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Row of bricks that is goal inches long")
 		void testBrickMaking() {
 			assertAll(() -> assertTrue(stuffMaker.makeBricks(3, 1, 8)),
@@ -60,6 +62,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return the sum & teen values are ignored!")
 		void testNoTeenSum() {
 			assertAll(() -> assertEquals(6, sumCalculator.calculateSum(1, 2, 3)),
@@ -68,6 +71,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Nearest value to 21, 0 if both go over!")
 		void testBlackJack() {
 			assertAll(() -> assertEquals(21, jackCalculator.calculateNearest(19, 21)),
@@ -87,6 +91,7 @@ class DSATests {
 					() -> assertEquals(21, jackCalculator.calculateNearest(21, 20)));
 		}
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Sum of 3 values, duplicates are ignored!")
 		void testLoneSum() {
 			assertAll(() -> assertEquals(6, calculator.loneSum(1, 2, 3)),
@@ -101,6 +106,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Sum of round up/down values!")
 		void sumOfRoundUpDownValues() {
 			assertAll(() -> assertEquals(60, calculator.roundSum(16, 17, 18)),
@@ -125,6 +131,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Given 3 ints find 2 Close & 1 Far")
 		void given3IntsFind2Close1Far() {
 
@@ -143,6 +150,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Number of small bars to use or -1, can't be done")
 		void numberOfSmallBarsToUseOr1CanTBeDone() {
 			assertAll(() -> assertEquals(4, stuffMaker.makeChocolate(4, 1, 9)),
@@ -172,6 +180,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return List where each integer is doubled")
 		void returnListWhereEachIntegerIsDoubled() {
 			assertAll(() -> assertArrayEquals(Arrays.asList(new Integer[]{2, 4, 6}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{1, 2, 3})).toArray()),
