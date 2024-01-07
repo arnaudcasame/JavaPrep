@@ -44,7 +44,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Return true if the three values are evenly spaced")
 		void testEvenlySpaced() {
 			assertAll(() -> assertFalse(evenly.evenlySpaced(4, 6, 3), "Evenly Spaced if returns true"),
@@ -71,7 +70,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Nearest value to 21, 0 if both go over!")
 		void testBlackJack() {
 			assertAll(() -> assertEquals(21, jackCalculator.calculateNearest(19, 21)),
@@ -180,7 +178,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Return List where each integer is doubled")
 		void returnListWhereEachIntegerIsDoubled() {
 			assertAll(() -> assertArrayEquals(Arrays.asList(new Integer[]{2, 4, 6}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{1, 2, 3})).toArray()),
