@@ -1,6 +1,5 @@
 package PrepApp.codingbat.FunctionalMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FunctionalMapping {
