@@ -9,4 +9,8 @@ public class LeetCalculator {
     public int numberOfArithmeticSlices(int[] nums) {
         return 0;
     }
+
+    public boolean isHappy(int n) {
+        return false;
+    }
 }

@@ -231,6 +231,14 @@ class DSATests {
 			assertAll(() -> assertEquals(7, calculator.numberOfArithmeticSlices(new int[]{2, 4, 6, 8, 10})),
 					() -> assertEquals(16, calculator.numberOfArithmeticSlices(new int[]{7, 7, 7, 7, 7})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Happy Number - 202")
+		void happyNumber202() {
+			assertAll(() -> assertTrue(calculator.isHappy(19)),
+					() -> assertFalse(calculator.isHappy(2)));
+		}
 	}
 
 }
