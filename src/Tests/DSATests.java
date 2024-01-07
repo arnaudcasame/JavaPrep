@@ -10,6 +10,7 @@ import PrepApp.codingbat.Calculator.Calculator;
 import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 
+import PrepApp.leetcode.StringOperator.StringOperator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -190,9 +191,13 @@ class DSATests {
     @Nested
 	@DisplayName("LeetCode")
 	class LeetCode {
+
+		private StringOperator stringOperator;
+
 		@BeforeEach
 		void setUp() {
 			profitCalculator = new MaximumProfit();
+			stringOperator = new StringOperator();
 		}
 
 		@Test
@@ -201,6 +206,13 @@ class DSATests {
 			assertAll(() -> assertEquals(120, profitCalculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
 					() -> assertEquals(150, profitCalculator.calculateProfit(new int[]{1, 2, 3, 4, 6}, new int[]{3, 5, 10, 6, 9}, new int[]{20, 20, 100, 70, 60})),
 					() -> assertEquals(6, profitCalculator.calculateProfit(new int[]{1, 1, 1}, new int[]{2, 3, 4}, new int[]{5, 6, 4})));
+		}
+
+		@Test
+		@DisplayName("Reverse Words in a String III - 557")
+		void reverseWordsInAStringIii557() {
+			assertAll(() -> assertEquals("s'teL ekat edoCteeL tsetnoc", stringOperator.reverseWords("Let's take LeetCode contest")),
+					() -> assertEquals("rM gniD", stringOperator.reverseWords("Mr Ding")));
 		}
 	}
 
