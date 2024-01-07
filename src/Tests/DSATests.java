@@ -4,12 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
-import PrepApp.leetcode.MaximumProfit.MaximumProfit;
+import PrepApp.leetcode.LeetCalculator.LeetCalculator;
 import PrepApp.codingbat.BlackJack.BlackJack;
 import PrepApp.codingbat.Calculator.Calculator;
 import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 
+import PrepApp.leetcode.StringOperator.StringOperator;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
@@ -18,24 +19,24 @@ import java.util.List;
 
 class DSATests {
 
-	private EvenlySpaced evenly;
-	private StuffMaker stuffMaker;
-	private MaximumProfit profitCalculator;
-	private NoTeenSum sumCalculator;
-	private BlackJack jackCalculator;
-
-	private Calculator calculator;
-
-	private FunctionalMapping functionalMapping;
-
 	@Nested
 	@DisplayName("CodingBat")
 	class CodingBat {
+
+		private EvenlySpaced evenly;
+		private StuffMaker stuffMaker;
+		private NoTeenSum sumCalculator;
+		private BlackJack jackCalculator;
+
+		private Calculator calculator;
+
+		private FunctionalMapping functionalMapping;
+
+
 		@BeforeEach
 		void setUp() {
 			evenly = new EvenlySpaced();
 			stuffMaker = new StuffMaker();
-			profitCalculator = new MaximumProfit();
 			sumCalculator = new NoTeenSum();
 			jackCalculator = new BlackJack();
 			calculator = new Calculator();
@@ -43,6 +44,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return true if the three values are evenly spaced")
 		void testEvenlySpaced() {
 			assertAll(() -> assertFalse(evenly.evenlySpaced(4, 6, 3), "Evenly Spaced if returns true"),
@@ -51,6 +53,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Row of bricks that is goal inches long")
 		void testBrickMaking() {
 			assertAll(() -> assertTrue(stuffMaker.makeBricks(3, 1, 8)),
@@ -59,6 +62,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return the sum & teen values are ignored!")
 		void testNoTeenSum() {
 			assertAll(() -> assertEquals(6, sumCalculator.calculateSum(1, 2, 3)),
@@ -67,6 +71,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Nearest value to 21, 0 if both go over!")
 		void testBlackJack() {
 			assertAll(() -> assertEquals(21, jackCalculator.calculateNearest(19, 21)),
@@ -86,6 +91,7 @@ class DSATests {
 					() -> assertEquals(21, jackCalculator.calculateNearest(21, 20)));
 		}
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Sum of 3 values, duplicates are ignored!")
 		void testLoneSum() {
 			assertAll(() -> assertEquals(6, calculator.loneSum(1, 2, 3)),
@@ -100,6 +106,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Sum of round up/down values!")
 		void sumOfRoundUpDownValues() {
 			assertAll(() -> assertEquals(60, calculator.roundSum(16, 17, 18)),
@@ -124,6 +131,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Given 3 ints find 2 Close & 1 Far")
 		void given3IntsFind2Close1Far() {
 
@@ -142,6 +150,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Number of small bars to use or -1, can't be done")
 		void numberOfSmallBarsToUseOr1CanTBeDone() {
 			assertAll(() -> assertEquals(4, stuffMaker.makeChocolate(4, 1, 9)),
@@ -171,6 +180,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Return List where each integer is doubled")
 		void returnListWhereEachIntegerIsDoubled() {
 			assertAll(() -> assertArrayEquals(Arrays.asList(new Integer[]{2, 4, 6}).toArray(), functionalMapping.doubling(Arrays.asList(new Integer[]{1, 2, 3})).toArray()),
@@ -187,18 +197,39 @@ class DSATests {
     @Nested
 	@DisplayName("LeetCode")
 	class LeetCode {
+
+		private StringOperator stringOperator;
+		private LeetCalculator calculator;
+
 		@BeforeEach
 		void setUp() {
-			profitCalculator = new MaximumProfit();
+			calculator = new LeetCalculator();
+			stringOperator = new StringOperator();
 		}
 
-		@Disabled("Until I find the solution for this problem!")
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Biggest Profit without Overlapping Time Range")
 		void testProfitCalculator() {
-			assertAll(() -> assertEquals(120, profitCalculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
-					() -> assertEquals(150, profitCalculator.calculateProfit(new int[]{1, 2, 3, 4, 6}, new int[]{3, 5, 10, 6, 9}, new int[]{20, 20, 100, 70, 60})),
-					() -> assertEquals(6, profitCalculator.calculateProfit(new int[]{1, 1, 1}, new int[]{2, 3, 4}, new int[]{5, 6, 4})));
+			assertAll(() -> assertEquals(120, calculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
+					() -> assertEquals(150, calculator.calculateProfit(new int[]{1, 2, 3, 4, 6}, new int[]{3, 5, 10, 6, 9}, new int[]{20, 20, 100, 70, 60})),
+					() -> assertEquals(6, calculator.calculateProfit(new int[]{1, 1, 1}, new int[]{2, 3, 4}, new int[]{5, 6, 4})));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Reverse Words in a String III - 557")
+		void reverseWordsInAStringIii557() {
+			assertAll(() -> assertEquals("s'teL ekat edoCteeL tsetnoc", stringOperator.reverseWords("Let's take LeetCode contest")),
+					() -> assertEquals("rM gniD", stringOperator.reverseWords("Mr Ding")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Arithmetic Slides II - Subsequence - 446")
+		void arithmeticSlidesIiSubsequence446() {
+			assertAll(() -> assertEquals(7, calculator.numberOfArithmeticSlices(new int[]{2, 4, 6, 8, 10})),
+					() -> assertEquals(16, calculator.numberOfArithmeticSlices(new int[]{7, 7, 7, 7, 7})));
 		}
 	}
 
