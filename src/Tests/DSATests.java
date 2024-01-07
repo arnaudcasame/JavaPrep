@@ -11,10 +11,7 @@ import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 
 import PrepApp.leetcode.StringOperator.StringOperator;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -202,6 +199,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Biggest Profit without Overlapping Time Range")
 		void testProfitCalculator() {
 			assertAll(() -> assertEquals(120, calculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
@@ -210,10 +208,19 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Reverse Words in a String III - 557")
 		void reverseWordsInAStringIii557() {
 			assertAll(() -> assertEquals("s'teL ekat edoCteeL tsetnoc", stringOperator.reverseWords("Let's take LeetCode contest")),
 					() -> assertEquals("rM gniD", stringOperator.reverseWords("Mr Ding")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Arithmetic Slides II - Subsequence - 446")
+		void arithmeticSlidesIiSubsequence446() {
+			assertAll(() -> assertEquals(7, calculator.numberOfArithmeticSlices(new int[]{2, 4, 6, 8, 10})),
+					() -> assertEquals(16, calculator.numberOfArithmeticSlices(new int[]{7, 7, 7, 7, 7})));
 		}
 	}
 
