@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
-import PrepApp.leetcode.MaximumProfit.MaximumProfit;
+import PrepApp.leetcode.LeetCalculator.LeetCalculator;
 import PrepApp.codingbat.BlackJack.BlackJack;
 import PrepApp.codingbat.Calculator.Calculator;
 import PrepApp.codingbat.NoTeenSum.NoTeenSum;
@@ -193,20 +193,20 @@ class DSATests {
 	class LeetCode {
 
 		private StringOperator stringOperator;
-		private MaximumProfit profitCalculator;
+		private LeetCalculator calculator;
 
 		@BeforeEach
 		void setUp() {
-			profitCalculator = new MaximumProfit();
+			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
 		}
 
 		@Test
 		@DisplayName("Biggest Profit without Overlapping Time Range")
 		void testProfitCalculator() {
-			assertAll(() -> assertEquals(120, profitCalculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
-					() -> assertEquals(150, profitCalculator.calculateProfit(new int[]{1, 2, 3, 4, 6}, new int[]{3, 5, 10, 6, 9}, new int[]{20, 20, 100, 70, 60})),
-					() -> assertEquals(6, profitCalculator.calculateProfit(new int[]{1, 1, 1}, new int[]{2, 3, 4}, new int[]{5, 6, 4})));
+			assertAll(() -> assertEquals(120, calculator.calculateProfit(new int[]{1, 2, 3, 3}, new int[]{3, 4, 5, 6}, new int[]{50, 10, 40, 70})),
+					() -> assertEquals(150, calculator.calculateProfit(new int[]{1, 2, 3, 4, 6}, new int[]{3, 5, 10, 6, 9}, new int[]{20, 20, 100, 70, 60})),
+					() -> assertEquals(6, calculator.calculateProfit(new int[]{1, 1, 1}, new int[]{2, 3, 4}, new int[]{5, 6, 4})));
 		}
 
 		@Test
