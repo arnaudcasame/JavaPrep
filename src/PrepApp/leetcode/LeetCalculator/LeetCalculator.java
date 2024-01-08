@@ -1,5 +1,7 @@
 package PrepApp.leetcode.LeetCalculator;
 
+import DSA.TreeNode;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,5 +23,13 @@ public class LeetCalculator {
             }
         }
         return res;
+    }
+
+    public boolean isHappy(int n) {
+        return false;
+    }
+
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        return 0;
     }
 }

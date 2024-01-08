@@ -1,6 +1,8 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
+import DSA.TreeNode;
+import Helpers.Helper;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
@@ -225,6 +227,25 @@ class DSATests {
 		void arithmeticSlidesIiSubsequence446() {
 			assertAll(() -> assertEquals(7, calculator.numberOfArithmeticSlices(new int[]{2, 4, 6, 8, 10})),
 					() -> assertEquals(16, calculator.numberOfArithmeticSlices(new int[]{7, 7, 7, 7, 7})));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Happy Number - 202")
+		void happyNumber202() {
+			assertAll(() -> assertTrue(calculator.isHappy(19)),
+					() -> assertFalse(calculator.isHappy(2)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Range Sum of BST - 934")
+		void rangeSumOfBst934() {
+			Helper helper = new Helper();
+			TreeNode root1 = helper.populateTreeNode(new int[]{10,5,15,3,7,18});
+			TreeNode root2 = helper.populateTreeNode(new int[]{10,5,15,3,7,13,18,1,6});
+			assertAll(() -> assertEquals(32, calculator.rangeSumBST(root1, 7, 15)),
+					() -> assertEquals(23, calculator.rangeSumBST(root2, 6, 10)));
 		}
 	}
 
