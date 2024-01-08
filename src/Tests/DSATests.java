@@ -2,6 +2,7 @@ package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import DSA.TreeNode;
+import Helpers.Helper;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
@@ -245,8 +246,11 @@ class DSATests {
 		@Disabled("Enable only to test solution!")
 		@DisplayName("Range Sum of BST - 934")
 		void rangeSumOfBst934() {
-			assertAll(() -> assertEquals(32, calculator.rangeSumBST(new TreeNode(), 7, 15)),
-					() -> assertEquals(23, calculator.rangeSumBST(new TreeNode(), 6, 10)));
+			Helper helper = new Helper();
+			TreeNode root1 = helper.populateTreeNode(new int[]{10,5,15,3,7,18});
+			TreeNode root2 = helper.populateTreeNode(new int[]{10,5,15,3,7,13,18,1,6});
+			assertAll(() -> assertEquals(32, calculator.rangeSumBST(root1, 7, 15)),
+					() -> assertEquals(23, calculator.rangeSumBST(root2, 6, 10)));
 		}
 	}
 
