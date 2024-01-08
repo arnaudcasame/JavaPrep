@@ -1,6 +1,7 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
+import DSA.TreeNode;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
@@ -238,6 +239,14 @@ class DSATests {
 		void happyNumber202() {
 			assertAll(() -> assertTrue(calculator.isHappy(19)),
 					() -> assertFalse(calculator.isHappy(2)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Range Sum of BST - 934")
+		void rangeSumOfBst934() {
+			assertAll(() -> assertEquals(32, calculator.rangeSumBST(new TreeNode(), 7, 15)),
+					() -> assertEquals(23, calculator.rangeSumBST(new TreeNode(), 6, 10)));
 		}
 	}
 

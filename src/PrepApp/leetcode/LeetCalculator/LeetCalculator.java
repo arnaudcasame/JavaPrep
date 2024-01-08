@@ -1,5 +1,7 @@
 package PrepApp.leetcode.LeetCalculator;
 
+import DSA.TreeNode;
+
 public class LeetCalculator {
 
     public int calculateProfit(int[] startTime, int[] endTime, int[] profit){
@@ -12,5 +14,9 @@ public class LeetCalculator {
 
     public boolean isHappy(int n) {
         return false;
+    }
+
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        return 0;
     }
 }
