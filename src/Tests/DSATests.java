@@ -254,7 +254,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Determine if String Halves are Alike - 1704")
 		void determineIfStringHalvesAreAlike() {
 			assertAll(() -> assertTrue(stringOperator.halvesAreAlike("book")),

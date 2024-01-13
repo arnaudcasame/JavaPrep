@@ -19,6 +19,20 @@ public class StringOperator {
     }
 
     public boolean halvesAreAlike(String s) {
-        return false;
+        String vowels = "aeiouAEIOU";
+        if(s.length()%2 != 0){
+            return false;
+        }
+        int tracker = 0;
+
+        for (int i = 0; i <s.length(); i++) {
+            char ch = s.charAt(i);
+            if(i < s.length()/2 && vowels.contains(String.valueOf(ch))){
+                tracker++;
+            }else if(i >= s.length()/2 && vowels.contains(String.valueOf(ch))){
+                tracker--;
+            }
+        }
+        return tracker == 0;
     }
 }
