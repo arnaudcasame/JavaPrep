@@ -252,6 +252,23 @@ class DSATests {
 //			Will verify that once I get to the Tree chapter and understand the Tree DS better
 //			assertEquals(23, calculator.rangeSumBST(root2, 6, 10));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Determine if String Halves are Alike - 1704")
+		void determineIfStringHalvesAreAlike() {
+			assertAll(() -> assertTrue(stringOperator.halvesAreAlike("book")),
+					() -> assertFalse(stringOperator.halvesAreAlike("textbook")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Minimum Number of Steps to Make Two Strings Anagram - 1347")
+		void minimumNumberOfSteps() {
+			assertAll(() -> assertEquals(1, calculator.minSteps("bab", "aba")),
+					() -> assertEquals(5, calculator.minSteps("leetcode", "practice")),
+					() -> assertEquals(0, calculator.minSteps("anagram", "mangaar")));
+		}
 	}
 
 }

@@ -42,4 +42,8 @@ public class LeetCalculator {
 //        System.out.println(root);
         return root.val + this.rangeSumBST(root.left, low, high) + this.rangeSumBST(root.right, low, high);
     }
+
+    public int minSteps(String s, String t) {
+        return 0;
+    }
 }

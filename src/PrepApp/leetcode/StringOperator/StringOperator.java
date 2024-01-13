@@ -17,4 +17,8 @@ public class StringOperator {
         reversed = word.concat(" ").concat(reversed);
         return reversed.trim();
     }
+
+    public boolean halvesAreAlike(String s) {
+        return false;
+    }
 }
