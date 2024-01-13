@@ -252,6 +252,14 @@ class DSATests {
 			assertAll(() -> assertEquals(32, calculator.rangeSumBST(root1, 7, 15)),
 					() -> assertEquals(23, calculator.rangeSumBST(root2, 6, 10)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Determine if String Halves are Alike - 1704")
+		void determineIfStringHalvesAreAlike() {
+			assertAll(() -> assertTrue(stringOperator.halvesAreAlike("book")),
+					() -> assertFalse(stringOperator.halvesAreAlike("textbook")));
+		}
 	}
 
 }
