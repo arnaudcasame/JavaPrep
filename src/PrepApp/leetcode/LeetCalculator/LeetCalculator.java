@@ -19,4 +19,8 @@ public class LeetCalculator {
     public int rangeSumBST(TreeNode root, int low, int high) {
         return 0;
     }
+
+    public int minSteps(String s, String t) {
+        return 0;
+    }
 }
