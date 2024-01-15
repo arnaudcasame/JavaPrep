@@ -261,12 +261,16 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Minimum Number of Steps to Make Two Strings Anagram - 1347")
 		void minimumNumberOfSteps() {
 			assertAll(() -> assertEquals(1, calculator.minSteps("bab", "aba")),
 					() -> assertEquals(5, calculator.minSteps("leetcode", "practice")),
 					() -> assertEquals(0, calculator.minSteps("anagram", "mangaar")));
+			assertAll(() -> assertEquals(1, calculator.minStepsO("bab", "aba")),
+					() -> assertEquals(5, calculator.minStepsO("leetcode", "practice")),
+					() -> assertEquals(0, calculator.minStepsO("anagram", "mangaar")),
+					() -> assertEquals(18, calculator.minStepsO("gctcxyuluxjuxnsvmomavutrrfb", "qijrjrhqqjxjtprybrzpyfyqtzf")));
+
 		}
 	}
 

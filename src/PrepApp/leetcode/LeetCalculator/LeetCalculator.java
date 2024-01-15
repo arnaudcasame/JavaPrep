@@ -44,6 +44,47 @@ public class LeetCalculator {
     }
 
     public int minSteps(String s, String t) {
-        return 0;
+        HashMap<Character, Integer> bucket = new HashMap<Character, Integer>();
+        for (int i = 0; i < s.length(); i++) {
+            bucket.put(s.charAt(i), 1 + bucket.getOrDefault(s.charAt(i), 0));
+        }
+        for (int i = 0; i < t.length(); i++) {
+            if(bucket.containsKey(t.charAt(i))){
+                bucket.put(t.charAt(i), bucket.getOrDefault(t.charAt(i), 0) - 1);
+            }
+        }
+        int tracker = 0;
+        for (int i: bucket.values()) {
+            tracker += i > 0 ? i : 0;
+        }
+        return tracker;
+    }
+
+    public int minStepsO(String s, String t) {
+        HashMap<Character, Integer> buck = new HashMap<Character, Integer>();
+        int tracker = 0;
+        int i = 0, j = 0;
+        while(i < s.length()){
+            if(s.charAt(j) == t.charAt(i)){
+                if(buck.containsKey(s.charAt(j)) && buck.get(s.charAt(j)) == j){
+                    buck.put(s.charAt(j), j);
+                    j++;
+                }else{
+                    buck.put(s.charAt(j), j);
+                    i++;
+                    j = 0;
+                }
+                continue;
+            }
+            if(j+1 == s.length()){
+                tracker++;
+                i++;
+                j = 0;
+                continue;
+            }
+            j++;
+        }
+        System.out.println(s + ": " + tracker);
+        return tracker;
     }
 }
