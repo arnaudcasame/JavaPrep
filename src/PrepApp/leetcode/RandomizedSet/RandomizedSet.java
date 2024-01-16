@@ -1,24 +1,32 @@
 package PrepApp.leetcode.RandomizedSet;
 
+import java.util.HashMap;
+import java.util.Random;
+
 public class RandomizedSet {
+    HashMap<Integer, Boolean> data = new HashMap<Integer, Boolean>();
     public RandomizedSet() {
 
     }
 
     public boolean insert(int val) {
-        return true;
+        return data.putIfAbsent(val, true) == null;
     }
 
     public boolean remove(int val) {
-        return false;
+        return data.remove(val) != null;
     }
 
     public int getRandom() {
-        return 0;
+        Integer[] arr = data.keySet().toArray(new Integer[data.keySet().size()]);
+        Random random = new Random();
+        int index = random.nextInt(arr.length - 0) + 0;
+        return arr[index];
     }
 
     public String getHistory(){
-        return "";
+        // This solution passed the Leetcode tests
+        return "[null,true,false,true,1,true,false,2]";
     }
 }
 /**

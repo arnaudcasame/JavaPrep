@@ -294,7 +294,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Insert Delete GetRandom O(1)-380")
 		void insertDeleteGetRandomO1380() {
 			// ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
