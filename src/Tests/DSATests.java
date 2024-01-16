@@ -12,6 +12,7 @@ import PrepApp.codingbat.Calculator.Calculator;
 import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 
+import PrepApp.leetcode.RandomizedSet.RandomizedSet;
 import PrepApp.leetcode.StringOperator.StringOperator;
 import org.junit.jupiter.api.*;
 
@@ -202,11 +203,13 @@ class DSATests {
 
 		private StringOperator stringOperator;
 		private LeetCalculator calculator;
+		private RandomizedSet randomizedSet;
 
 		@BeforeEach
 		void setUp() {
 			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
+			randomizedSet = new RandomizedSet();
 		}
 
 		@Test
@@ -285,6 +288,22 @@ class DSATests {
 			int[] loosers2 = Helper.fromListToArray(answer2.get(1));
 			assertArrayEquals(new int[]{1,2,5,6}, winners2);
 			assertArrayEquals(new int[]{}, loosers2);
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Insert Delete GetRandom O(1)-380")
+		void insertDeleteGetRandomO1380() {
+			// ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
+			// [[],[1],[2],[2],[],[1],[2],[]]
+			randomizedSet.insert(1);
+			randomizedSet.remove(2);
+			randomizedSet.insert(2);
+			randomizedSet.getRandom();
+			randomizedSet.remove(1);
+			randomizedSet.insert(2);
+			randomizedSet.getRandom();
+			assertEquals("[null,true,false,true,1,true,false,2]", randomizedSet.getHistory());
 		}
 	}
 
