@@ -2,6 +2,10 @@ package PrepApp.leetcode.LeetCalculator;
 
 import DSA.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class LeetCalculator {
 
     public int calculateProfit(int[] startTime, int[] endTime, int[] profit){
@@ -22,5 +26,9 @@ public class LeetCalculator {
 
     public int minSteps(String s, String t) {
         return 0;
+    }
+
+    public List<List<Integer>> findWinners(int[][] matches) {
+        return new ArrayList<List<Integer>>();
     }
 }

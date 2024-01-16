@@ -269,6 +269,23 @@ class DSATests {
 					() -> assertEquals(5, calculator.minSteps("leetcode", "practice")),
 					() -> assertEquals(0, calculator.minSteps("anagram", "mangaar")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Find Players w/ Zero/One Losses")
+		void findPlayersWZeroOneLosses() {
+			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1,3}, {2,3}, {3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}});
+			int[] winners1 = Helper.fromListToArray(answer1.get(0));
+			int[] loosers1 = Helper.fromListToArray(answer1.get(1));
+			assertArrayEquals(new int[]{1,2,10}, winners1);
+			assertArrayEquals(new int[]{4,5,7,8}, loosers1);
+
+			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2,3},{1,3},{5,4},{6,4}});
+			int[] winners2 = Helper.fromListToArray(answer2.get(0));
+			int[] loosers2 = Helper.fromListToArray(answer2.get(1));
+			assertArrayEquals(new int[]{1,2,5,6}, winners2);
+			assertArrayEquals(new int[]{}, loosers2);
+		}
 	}
 
 }
