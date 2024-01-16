@@ -2,8 +2,10 @@ package Helpers;
 
 import DSA.TreeNode;
 
+import java.util.List;
+
 public class Helper {
-   public TreeNode populateTreeNode(int[] arr){
+    public TreeNode populateTreeNode(int[] arr){
        TreeNode root = null;
        TreeNode current = null;
        for (int i = 0; i < arr.length; i++) {
@@ -21,5 +23,13 @@ public class Helper {
            }
        }
        return root;
+   }
+
+   public static int[] fromListToArray(List<Integer> list){
+       int[] res = new int[list.size()];
+       for (int i = 0; i < list.size(); i++) {
+           res[i] = list.get(i);
+       }
+       return res;
    }
 }
