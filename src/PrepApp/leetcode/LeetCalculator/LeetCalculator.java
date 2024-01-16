@@ -2,6 +2,10 @@ package PrepApp.leetcode.LeetCalculator;
 
 import DSA.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -86,5 +90,9 @@ public class LeetCalculator {
         }
         System.out.println(s + ": " + tracker);
         return tracker;
+    }
+
+    public List<List<Integer>> findWinners(int[][] matches) {
+        return new ArrayList<List<Integer>>();
     }
 }

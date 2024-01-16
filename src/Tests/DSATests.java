@@ -12,6 +12,7 @@ import PrepApp.codingbat.Calculator.Calculator;
 import PrepApp.codingbat.NoTeenSum.NoTeenSum;
 
 
+import PrepApp.leetcode.RandomizedSet.RandomizedSet;
 import PrepApp.leetcode.StringOperator.StringOperator;
 import org.junit.jupiter.api.*;
 
@@ -199,11 +200,13 @@ class DSATests {
 
 		private StringOperator stringOperator;
 		private LeetCalculator calculator;
+		private RandomizedSet randomizedSet;
 
 		@BeforeEach
 		void setUp() {
 			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
+			randomizedSet = new RandomizedSet();
 		}
 
 		@Test
@@ -271,6 +274,39 @@ class DSATests {
 					() -> assertEquals(0, calculator.minStepsO("anagram", "mangaar")),
 					() -> assertEquals(18, calculator.minStepsO("gctcxyuluxjuxnsvmomavutrrfb", "qijrjrhqqjxjtprybrzpyfyqtzf")));
 
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Find Players w/ Zero/One Losses")
+		void findPlayersWZeroOneLosses() {
+			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1,3}, {2,3}, {3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}});
+			int[] winners1 = Helper.fromListToArray(answer1.get(0));
+			int[] loosers1 = Helper.fromListToArray(answer1.get(1));
+			assertArrayEquals(new int[]{1,2,10}, winners1);
+			assertArrayEquals(new int[]{4,5,7,8}, loosers1);
+
+			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2,3},{1,3},{5,4},{6,4}});
+			int[] winners2 = Helper.fromListToArray(answer2.get(0));
+			int[] loosers2 = Helper.fromListToArray(answer2.get(1));
+			assertArrayEquals(new int[]{1,2,5,6}, winners2);
+			assertArrayEquals(new int[]{}, loosers2);
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Insert Delete GetRandom O(1)-380")
+		void insertDeleteGetRandomO1380() {
+			// ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
+			// [[],[1],[2],[2],[],[1],[2],[]]
+			randomizedSet.insert(1);
+			randomizedSet.remove(2);
+			randomizedSet.insert(2);
+			randomizedSet.getRandom();
+			randomizedSet.remove(1);
+			randomizedSet.insert(2);
+			randomizedSet.getRandom();
+			assertEquals("[null,true,false,true,1,true,false,2]", randomizedSet.getHistory());
 		}
 	}
 
