@@ -6,6 +6,7 @@ import Helpers.Helper;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
+import PrepApp.leetcode.ArrayOperator.ArrayOperator;
 import PrepApp.leetcode.LeetCalculator.LeetCalculator;
 import PrepApp.codingbat.BlackJack.BlackJack;
 import PrepApp.codingbat.Calculator.Calculator;
@@ -204,12 +205,14 @@ class DSATests {
 		private StringOperator stringOperator;
 		private LeetCalculator calculator;
 		private RandomizedSet randomizedSet;
+		private ArrayOperator arrayOperator;
 
 		@BeforeEach
 		void setUp() {
 			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
 			randomizedSet = new RandomizedSet();
+			arrayOperator = new ArrayOperator();
 		}
 
 		@Test
@@ -250,8 +253,8 @@ class DSATests {
 		@DisplayName("Range Sum of BST - 934")
 		void rangeSumOfBst934() {
 			Helper helper = new Helper();
-			TreeNode root1 = helper.populateTreeNode(new int[]{10,5,15,3,7,18});
-			TreeNode root2 = helper.populateTreeNode(new int[]{10,5,15,3,7,13,18,1,6});
+			TreeNode root1 = helper.populateTreeNode(new int[]{10, 5, 15, 3, 7, 18});
+			TreeNode root2 = helper.populateTreeNode(new int[]{10, 5, 15, 3, 7, 13, 18, 1, 6});
 			assertAll(() -> assertEquals(32, calculator.rangeSumBST(root1, 7, 15)),
 					() -> assertEquals(23, calculator.rangeSumBST(root2, 6, 10)));
 		}
@@ -277,16 +280,16 @@ class DSATests {
 		@Disabled("Enable only to test solution!")
 		@DisplayName("Find Players w/ Zero/One Losses")
 		void findPlayersWZeroOneLosses() {
-			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1,3}, {2,3}, {3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}});
+			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1, 3}, {2, 3}, {3, 6}, {5, 6}, {5, 7}, {4, 5}, {4, 8}, {4, 9}, {10, 4}, {10, 9}});
 			int[] winners1 = Helper.fromListToArray(answer1.get(0));
 			int[] loosers1 = Helper.fromListToArray(answer1.get(1));
-			assertArrayEquals(new int[]{1,2,10}, winners1);
-			assertArrayEquals(new int[]{4,5,7,8}, loosers1);
+			assertArrayEquals(new int[]{1, 2, 10}, winners1);
+			assertArrayEquals(new int[]{4, 5, 7, 8}, loosers1);
 
-			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2,3},{1,3},{5,4},{6,4}});
+			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2, 3}, {1, 3}, {5, 4}, {6, 4}});
 			int[] winners2 = Helper.fromListToArray(answer2.get(0));
 			int[] loosers2 = Helper.fromListToArray(answer2.get(1));
-			assertArrayEquals(new int[]{1,2,5,6}, winners2);
+			assertArrayEquals(new int[]{1, 2, 5, 6}, winners2);
 			assertArrayEquals(new int[]{}, loosers2);
 		}
 
@@ -304,6 +307,15 @@ class DSATests {
 			randomizedSet.insert(2);
 			randomizedSet.getRandom();
 			assertEquals("[null,true,false,true,1,true,false,2]", randomizedSet.getHistory());
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Unique Number Of Occurrences-1207")
+		void uniqueNumberOfOccurrences1207() {
+			assertAll(() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{1, 2, 2, 1, 1, 3})),
+					() -> assertFalse(arrayOperator.uniqueOccurrences(new int[]{1, 2})),
+					() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{-3, 0, 1, -3, 1, 1, 1, -3, 10, 0})));
 		}
 	}
 
