@@ -6,6 +6,7 @@ import Helpers.Helper;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
 import PrepApp.codingbat.StuffMaker.StuffMaker;
 import PrepApp.codingbat.EvenlySpaced.EvenlySpaced;
+import PrepApp.leetcode.ArrayOperator.ArrayOperator;
 import PrepApp.leetcode.LeetCalculator.LeetCalculator;
 import PrepApp.codingbat.BlackJack.BlackJack;
 import PrepApp.codingbat.Calculator.Calculator;
@@ -201,12 +202,14 @@ class DSATests {
 		private StringOperator stringOperator;
 		private LeetCalculator calculator;
 		private RandomizedSet randomizedSet;
+		private ArrayOperator arrayOperator;
 
 		@BeforeEach
 		void setUp() {
 			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
 			randomizedSet = new RandomizedSet();
+			arrayOperator = new ArrayOperator();
 		}
 
 		@Test
@@ -257,6 +260,7 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Determine if String Halves are Alike - 1704")
 		void determineIfStringHalvesAreAlike() {
 			assertAll(() -> assertTrue(stringOperator.halvesAreAlike("book")),
@@ -264,36 +268,33 @@ class DSATests {
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Minimum Number of Steps to Make Two Strings Anagram - 1347")
 		void minimumNumberOfSteps() {
 			assertAll(() -> assertEquals(1, calculator.minSteps("bab", "aba")),
 					() -> assertEquals(5, calculator.minSteps("leetcode", "practice")),
 					() -> assertEquals(0, calculator.minSteps("anagram", "mangaar")));
-			assertAll(() -> assertEquals(1, calculator.minStepsO("bab", "aba")),
-					() -> assertEquals(5, calculator.minStepsO("leetcode", "practice")),
-					() -> assertEquals(0, calculator.minStepsO("anagram", "mangaar")),
-					() -> assertEquals(18, calculator.minStepsO("gctcxyuluxjuxnsvmomavutrrfb", "qijrjrhqqjxjtprybrzpyfyqtzf")));
-
 		}
 
 		@Test
 		@Disabled("Enable only to test solution!")
 		@DisplayName("Find Players w/ Zero/One Losses")
 		void findPlayersWZeroOneLosses() {
-			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1,3}, {2,3}, {3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}});
+			List<List<Integer>> answer1 = calculator.findWinners(new int[][]{{1, 3}, {2, 3}, {3, 6}, {5, 6}, {5, 7}, {4, 5}, {4, 8}, {4, 9}, {10, 4}, {10, 9}});
 			int[] winners1 = Helper.fromListToArray(answer1.get(0));
 			int[] loosers1 = Helper.fromListToArray(answer1.get(1));
-			assertArrayEquals(new int[]{1,2,10}, winners1);
-			assertArrayEquals(new int[]{4,5,7,8}, loosers1);
+			assertArrayEquals(new int[]{1, 2, 10}, winners1);
+			assertArrayEquals(new int[]{4, 5, 7, 8}, loosers1);
 
-			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2,3},{1,3},{5,4},{6,4}});
+			List<List<Integer>> answer2 = calculator.findWinners(new int[][]{{2, 3}, {1, 3}, {5, 4}, {6, 4}});
 			int[] winners2 = Helper.fromListToArray(answer2.get(0));
 			int[] loosers2 = Helper.fromListToArray(answer2.get(1));
-			assertArrayEquals(new int[]{1,2,5,6}, winners2);
+			assertArrayEquals(new int[]{1, 2, 5, 6}, winners2);
 			assertArrayEquals(new int[]{}, loosers2);
 		}
 
 		@Test
+		@Disabled("Enable only to test solution!")
 		@DisplayName("Insert Delete GetRandom O(1)-380")
 		void insertDeleteGetRandomO1380() {
 			// ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
@@ -306,6 +307,15 @@ class DSATests {
 			randomizedSet.insert(2);
 			randomizedSet.getRandom();
 			assertEquals("[null,true,false,true,1,true,false,2]", randomizedSet.getHistory());
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Unique Number Of Occurrences-1207")
+		void uniqueNumberOfOccurrences1207() {
+			assertAll(() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{1, 2, 2, 1, 1, 3})),
+					() -> assertFalse(arrayOperator.uniqueOccurrences(new int[]{1, 2})),
+					() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{-3, 0, 1, -3, 1, 1, 1, -3, 10, 0})));
 		}
 	}
 
