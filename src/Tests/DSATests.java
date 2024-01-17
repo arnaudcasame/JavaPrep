@@ -260,7 +260,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Determine if String Halves are Alike - 1704")
 		void determineIfStringHalvesAreAlike() {
 			assertAll(() -> assertTrue(stringOperator.halvesAreAlike("book")),
@@ -268,12 +267,15 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Minimum Number of Steps to Make Two Strings Anagram - 1347")
 		void minimumNumberOfSteps() {
 			assertAll(() -> assertEquals(1, calculator.minSteps("bab", "aba")),
 					() -> assertEquals(5, calculator.minSteps("leetcode", "practice")),
 					() -> assertEquals(0, calculator.minSteps("anagram", "mangaar")));
+			assertAll(() -> assertEquals(1, calculator.minStepsO("bab", "aba")),
+					() -> assertEquals(5, calculator.minStepsO("leetcode", "practice")),
+					() -> assertEquals(0, calculator.minStepsO("anagram", "mangaar")),
+					() -> assertEquals(18, calculator.minStepsO("gctcxyuluxjuxnsvmomavutrrfb", "qijrjrhqqjxjtprybrzpyfyqtzf")));
 		}
 
 		@Test
@@ -294,7 +296,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Insert Delete GetRandom O(1)-380")
 		void insertDeleteGetRandomO1380() {
 			// ["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
@@ -310,7 +311,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Unique Number Of Occurrences-1207")
 		void uniqueNumberOfOccurrences1207() {
 			assertAll(() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{1, 2, 2, 1, 1, 3})),
