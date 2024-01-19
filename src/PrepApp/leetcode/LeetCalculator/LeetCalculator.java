@@ -1,6 +1,7 @@
 package PrepApp.leetcode.LeetCalculator;
 
 import DSA.TreeNode;
+import Helpers.Helper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -97,6 +98,14 @@ public class LeetCalculator {
     }
 
     public int minFallingPathSum(int[][] matrix) {
-        return 0;
+        for (int r = 1; r < matrix.length; r++) {
+            for (int c = 0; c < matrix.length; c++) {
+                int mid = matrix[r - 1][c];
+                int left = c > 0 ? matrix[r - 1][c - 1] : Integer.MAX_VALUE;
+                int right = c < matrix.length-1 ? matrix[r - 1][c + 1] : Integer.MAX_VALUE;
+                matrix[r][c] = matrix[r][c] + Math.min(Math.min(left, right), mid);
+            }
+        }
+        return Helper.getMin(matrix[matrix.length-1], matrix.length);
     }
 }
