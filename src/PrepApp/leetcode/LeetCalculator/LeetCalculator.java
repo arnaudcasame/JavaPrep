@@ -95,4 +95,8 @@ public class LeetCalculator {
     public List<List<Integer>> findWinners(int[][] matches) {
         return new ArrayList<List<Integer>>();
     }
+
+    public int minFallingPathSum(int[][] matrix) {
+        return 0;
+    }
 }

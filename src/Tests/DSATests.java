@@ -317,6 +317,14 @@ class DSATests {
 					() -> assertFalse(arrayOperator.uniqueOccurrences(new int[]{1, 2})),
 					() -> assertTrue(arrayOperator.uniqueOccurrences(new int[]{-3, 0, 1, -3, 1, 1, 1, -3, 10, 0})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Minimum Falling Path Sum-931")
+		void minimumFallingPathSum931() {
+			assertAll(() -> assertEquals(13, calculator.minFallingPathSum(new int[][]{{2, 1, 3}, {6, 5, 4}, {7, 8, 9}})),
+					() -> assertEquals(-59, calculator.minFallingPathSum(new int[][]{{-19, 57}, {-40, -5}})));
+		}
 	}
 
 }
