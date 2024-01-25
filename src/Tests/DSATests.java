@@ -325,6 +325,15 @@ class DSATests {
 			assertAll(() -> assertEquals(13, calculator.minFallingPathSum(new int[][]{{2, 1, 3}, {6, 5, 4}, {7, 8, 9}})),
 					() -> assertEquals(-59, calculator.minFallingPathSum(new int[][]{{-19, 57}, {-40, -5}})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Longest Common Subsequence - 1143")
+		void longestCommonSubsequence1143() {
+			assertAll(() -> assertEquals(3, stringOperator.longestCommonSubsequence("abcde", "ace")),
+					() -> assertEquals(3, stringOperator.longestCommonSubsequence("abc", "abc")),
+					() -> assertEquals(0, stringOperator.longestCommonSubsequence("abc", "def")));
+		}
 	}
 
 }

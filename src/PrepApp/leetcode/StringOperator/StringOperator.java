@@ -9,4 +9,8 @@ public class StringOperator {
     public boolean halvesAreAlike(String s) {
         return false;
     }
+
+    public int longestCommonSubsequence(String text1, String text2) {
+        return 0;
+    }
 }
