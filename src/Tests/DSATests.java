@@ -326,11 +326,13 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Longest Common Subsequence - 1143")
 		void longestCommonSubsequence1143() {
 			assertAll(() -> assertEquals(3, stringOperator.longestCommonSubsequence("abcde", "ace")),
 					() -> assertEquals(3, stringOperator.longestCommonSubsequence("abc", "abc")),
+					() -> assertEquals(2, stringOperator.longestCommonSubsequence("ezupkr", "ubmrapg")),
+					() -> assertEquals(1, stringOperator.longestCommonSubsequence("bl", "yby")),
+					() -> assertEquals(210, stringOperator.longestCommonSubsequence("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")),
 					() -> assertEquals(0, stringOperator.longestCommonSubsequence("abc", "def")));
 		}
 	}
