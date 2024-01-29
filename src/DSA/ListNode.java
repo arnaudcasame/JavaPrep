@@ -1,14 +1,14 @@
 package DSA;
 
 public class ListNode<T> {
-    private T val;
-    private ListNode next;
-    public ListNode(T val, ListNode next){
+    private final T val;
+    private ListNode<T> next;
+    public ListNode(T val, ListNode<T> next){
         this.val = val;
         this.next = next;
     }
 
-    public ListNode getNext() {
+    public ListNode<T> getNext() {
         return next;
     }
 
@@ -16,7 +16,7 @@ public class ListNode<T> {
         return val;
     }
 
-    public void setNext(ListNode next) {
+    public void setNext(ListNode<T> next) {
         this.next = next;
     }
 }
