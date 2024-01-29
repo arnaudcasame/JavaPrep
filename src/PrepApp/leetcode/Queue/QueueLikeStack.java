@@ -1,24 +1,40 @@
 package PrepApp.leetcode.Queue;
 
+import DSA.ListNode;
+
 public class QueueLikeStack {
 
-    public QueueLikeStack() {
-
-    }
+    private ListNode<Integer> head;
+    private ListNode<Integer> tail;
+    public QueueLikeStack() {}
 
     public void push(int x) {
-
+        if(head == null){
+            head = new ListNode<Integer>(x, null);
+            tail = head;
+        }else{
+            ListNode<Integer> list = new ListNode<Integer>(x, null);
+            tail.setNext(list);
+            tail = list;
+        }
     }
 
     public int pop() {
-        return 0;
+        ListNode<Integer> popped = head;
+        head = head.getNext();
+        popped.setNext(null);
+        return popped.getVal();
     }
 
     public int peek() {
-        return 0;
+        return head.getVal();
     }
 
     public boolean empty() {
-        return false;
+        return head == null;
+    }
+
+    public int getTail_(){
+        return tail.getVal();
     }
 }

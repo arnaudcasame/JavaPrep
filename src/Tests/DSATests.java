@@ -338,7 +338,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Implement Queue Using Stacks-232")
 		void implementQueueUsingStacks232() {
 			QueueLikeStack queue = new QueueLikeStack();
@@ -346,7 +345,8 @@ class DSATests {
 			assertEquals(1, queue.peek());
 			queue.push(2);
 			assertEquals(1, queue.peek());
-			queue.pop();
+			assertEquals(2, queue.getTail_());
+			assertEquals(1, queue.pop());
 			assertEquals(2, queue.peek());
 			assertFalse(queue.empty());
 		}
