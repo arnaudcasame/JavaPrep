@@ -1,6 +1,7 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
+import PrepApp.leetcode.Queue.QueueLikeStack;
 import DSA.TreeNode;
 import Helpers.Helper;
 import PrepApp.codingbat.FunctionalMapping.FunctionalMapping;
@@ -333,6 +334,20 @@ class DSATests {
 			assertAll(() -> assertEquals(3, stringOperator.longestCommonSubsequence("abcde", "ace")),
 					() -> assertEquals(3, stringOperator.longestCommonSubsequence("abc", "abc")),
 					() -> assertEquals(0, stringOperator.longestCommonSubsequence("abc", "def")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Implement Queue Using Stacks-232")
+		void implementQueueUsingStacks232() {
+			QueueLikeStack queue = new QueueLikeStack();
+			queue.push(1);
+			assertEquals(1, queue.peek());
+			queue.push(2);
+			assertEquals(1, queue.peek());
+			queue.pop();
+			assertEquals(2, queue.peek());
+			assertFalse(queue.empty());
 		}
 	}
 
