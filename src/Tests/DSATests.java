@@ -1,6 +1,7 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
+import Helpers.ArrayHelper;
 import PrepApp.leetcode.Queue.QueueLikeStack;
 import DSA.TreeNode;
 import Helpers.Helper;
@@ -348,6 +349,19 @@ class DSATests {
 			queue.pop();
 			assertEquals(2, queue.peek());
 			assertFalse(queue.empty());
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Group Anagrams - 49")
+		void groupAnagrams49() {
+			ArrayHelper<String> arrHelper = new ArrayHelper<String>();
+			List<List<String>> res1 = arrayOperator.groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"});
+			List<List<String>> res2 = arrayOperator.groupAnagrams(new String[]{""});
+			List<List<String>> res3 = arrayOperator.groupAnagrams(new String[]{"a"});
+			assertArrayEquals(new String[][]{{"bat"},{"nat","tan"},{"ate","eat","tea"}}, arrHelper.fromEmbeddedListToArray(res1));
+			assertArrayEquals(new String[][]{{""}}, arrHelper.fromEmbeddedListToArray(res2));
+			assertArrayEquals(new String[][]{{"a"}}, arrHelper.fromEmbeddedListToArray(res3));
 		}
 	}
 
