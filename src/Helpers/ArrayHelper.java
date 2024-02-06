@@ -13,7 +13,7 @@ public class ArrayHelper<T> {
     }
 
     public T[][] fromEmbeddedListToArray(List<List<T>> list){
-        T[][] res = (T[][]) new Object[list.size()];
+        T[][] res = (T[][]) new Object[list.size()][0];
         for(int j=0; j<list.size(); j++){
             T[] inner = (T[]) new Object[list.get(j).size()];
             for (int i=0; i < list.get(j).size(); i++) {
