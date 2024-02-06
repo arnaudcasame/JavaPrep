@@ -1,10 +1,6 @@
 package PrepApp.leetcode.ArrayOperator;
 
-import java.util.HashMap;
-import java.util.HashSet;
-
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ArrayOperator {
     public boolean uniqueOccurrences(int[] arr) {
@@ -23,6 +19,17 @@ public class ArrayOperator {
     }
 
     public List<List<String>> groupAnagrams(String[] strs) {
-        return Arrays.asList(Arrays.asList(new String[]{}));
+
+        HashMap<String, List<String>> bucket = new HashMap<>();
+
+        for(String word: strs){
+            char[] arr = word.toCharArray();
+            Arrays.sort(arr);
+            String key = new String(arr);
+            List<String> temp = bucket.getOrDefault(key, new ArrayList<String>());
+            temp.add(word);
+            bucket.put(key, temp);
+        }
+        return bucket.values().stream().toList();
     }
 }
