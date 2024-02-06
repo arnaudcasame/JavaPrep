@@ -359,9 +359,9 @@ class DSATests {
 			List<List<String>> res1 = arrayOperator.groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"});
 			List<List<String>> res2 = arrayOperator.groupAnagrams(new String[]{""});
 			List<List<String>> res3 = arrayOperator.groupAnagrams(new String[]{"a"});
-			assertArrayEquals(new String[][]{{"eat","tea","ate"},{"bat"},{"tan","nat"}}, arrHelper.fromEmbeddedListToArray(res1));
-			assertArrayEquals(new String[][]{{""}}, arrHelper.fromEmbeddedListToArray(res2));
-			assertArrayEquals(new String[][]{{"a"}}, arrHelper.fromEmbeddedListToArray(res3));
+			assertAll(() -> assertArrayEquals(new String[][]{{"eat", "tea", "ate"}, {"bat"}, {"tan", "nat"}}, arrHelper.fromEmbeddedListToArray(res1)),
+					() -> assertArrayEquals(new String[][]{{""}}, arrHelper.fromEmbeddedListToArray(res2)),
+					() -> assertArrayEquals(new String[][]{{"a"}}, arrHelper.fromEmbeddedListToArray(res3)));
 		}
 	}
 
