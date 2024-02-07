@@ -363,6 +363,15 @@ class DSATests {
 					() -> assertArrayEquals(new String[][]{{""}}, arrHelper.fromEmbeddedListToArray(res2)),
 					() -> assertArrayEquals(new String[][]{{"a"}}, arrHelper.fromEmbeddedListToArray(res3)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Evaluate Reverse Polish Notation - 150")
+		void evaluateReversePolishNotation150() {
+			assertAll(() -> assertEquals(9, calculator.evalRPN(new String[]{"2", "1", "+", "3", "*"})),
+					() -> assertEquals(6, calculator.evalRPN(new String[]{"4", "13", "5", "/", "+"})),
+					() -> assertEquals(22, calculator.evalRPN(new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"})));
+		}
 	}
 
 }
