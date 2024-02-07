@@ -1,8 +1,6 @@
 package PrepApp.leetcode.StringOperator;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class StringOperator {
 
@@ -63,6 +61,40 @@ public class StringOperator {
     }
 
     public String frequencySort(String s) {
-        return "";
+        HashMap<String, Integer> bucket = new HashMap<>();
+        for(char letter: s.toCharArray()){
+            bucket.put(String.valueOf(letter), bucket.getOrDefault(String.valueOf(letter), 0) + 1);
+        }
+
+        HashMap<Integer, String> bucket2 = new HashMap<Integer, String>();
+        for(String key: bucket.keySet()){
+            int index = bucket.get(key);
+            for (int j = 0; j < index; j++) {
+                if(bucket2.containsKey(index)){
+                    bucket2.put(index, bucket2.get(index) + key);
+                }else{
+                    bucket2.put(index, key);
+                }
+            }
+        }
+
+        String res = "";
+        int i = 0;
+        int max = -1;
+        Integer[] keys = bucket2.keySet().toArray(new Integer[0]);
+        while(keys.length > 0){
+            int key = keys[i];
+            max = Math.max(max, key);
+            if(i == keys.length-1){
+                i=0;
+                res += bucket2.get(max);
+                bucket2.remove(max);
+                keys = bucket2.keySet().toArray(new Integer[0]);
+                max = -1;
+            }else{
+                i++;
+            }
+        }
+        return res;
     }
 }
