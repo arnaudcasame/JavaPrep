@@ -57,4 +57,12 @@ public class StringOperator {
         }
         return dp[m][n];
     }
+
+    public int firstUniqChar(String s) {
+        return 0;
+    }
+
+    public String frequencySort(String s) {
+        return "";
+    }
 }
