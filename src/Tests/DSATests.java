@@ -381,6 +381,15 @@ class DSATests {
 					() -> assertEquals(2, stringOperator.firstUniqChar("loveleetcode")),
 					() -> assertEquals(-1, stringOperator.firstUniqChar("aabb")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Sort Characters By Frequency - 451")
+		void sortCharactersByFrequency451() {
+			assertAll(() -> assertEquals("eert", stringOperator.frequencySort("tree")),
+					() -> assertEquals("aaaccc", stringOperator.frequencySort("cccaaa")),
+					() -> assertEquals("bbAa", stringOperator.frequencySort("Aabb")));
+		}
 	}
 
 }
