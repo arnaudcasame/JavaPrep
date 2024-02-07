@@ -372,6 +372,15 @@ class DSATests {
 					() -> assertEquals(6, calculator.evalRPN(new String[]{"4", "13", "5", "/", "+"})),
 					() -> assertEquals(22, calculator.evalRPN(new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Fisrt unique Character in String - 387")
+		void fisrtUniqueCharacterInString387() {
+			assertAll(() -> assertEquals(0, stringOperator.firstUniqChar("leetcode")),
+					() -> assertEquals(2, stringOperator.firstUniqChar("loveleetcode")),
+					() -> assertEquals(-1, stringOperator.firstUniqChar("aabb")));
+		}
 	}
 
 }

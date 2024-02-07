@@ -13,4 +13,8 @@ public class StringOperator {
     public int longestCommonSubsequence(String text1, String text2) {
         return 0;
     }
+
+    public int firstUniqChar(String s) {
+        return 0;
+    }
 }
