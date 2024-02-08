@@ -111,4 +111,8 @@ public class LeetCalculator {
     public int evalRPN(String[] tokens) {
         return 0;
     }
+
+    public int numSquares(int n) {
+        return 0;
+    }
 }
