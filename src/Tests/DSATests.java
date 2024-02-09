@@ -397,7 +397,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Perfect Squares - 279")
 		void perfectSquares279() {
 			assertAll(() -> assertEquals(3, calculator.numSquares(12)),
