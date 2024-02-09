@@ -11,4 +11,8 @@ public class ArrayOperator {
     public List<List<String>> groupAnagrams(String[] strs) {
         return Arrays.asList(Arrays.asList(new String[]{}));
     }
+
+    public List<Integer> largestDivisibleSubset(int[] nums) {
+        return Arrays.asList(0,0,0);
+    }
 }
