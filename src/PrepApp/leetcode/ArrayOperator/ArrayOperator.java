@@ -1,5 +1,6 @@
 package PrepApp.leetcode.ArrayOperator;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class ArrayOperator {
@@ -34,6 +35,43 @@ public class ArrayOperator {
     }
 
     public List<Integer> largestDivisibleSubset(int[] nums) {
-        return Arrays.asList(0,0,0);
+        Arrays.sort(nums);
+        HashMap<Integer, List<Integer>> cache = new HashMap<>();
+
+        List<Integer> res = List.of();
+        for (int i = 0; i < nums.length; i++) {
+            List<Integer> temp = dfs(i, nums, cache);
+            if(temp.size() > res.size()){
+                res = temp;
+            }
+        }
+
+        System.out.println(res.stream().toList());
+        return res;
+    }
+
+    private List<Integer> dfs(int i, int[]  nums, HashMap<Integer, List<Integer>> cache){
+        if (i == nums.length){
+            return List.of();
+        }
+        if (cache.containsKey(i)){
+            return cache.get(i);
+        }
+
+        List<Integer> res = List.of(nums[i]);
+        for (int j = i+1; j < nums.length; j++) {
+            if(nums[j] % nums[i] == 0){
+                List<Integer> resultList = new ArrayList<>(1 + dfs(j, nums, cache).size());
+                Integer[] array1 = new Integer[]{nums[i]};
+                Collections.addAll(resultList, array1);
+                Collections.addAll(resultList, dfs(j, nums, cache).stream().toArray(Integer[]::new));
+                Integer[] temp = resultList.toArray(Integer[]::new);
+                if(temp.length > res.size()){
+                    res = Arrays.stream(temp).toList();
+                }
+            }
+        }
+        cache.put(i, res);
+        return res;
     }
 }
