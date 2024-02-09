@@ -32,4 +32,8 @@ public class ArrayOperator {
         }
         return bucket.values().stream().toList();
     }
+
+    public List<Integer> largestDivisibleSubset(int[] nums) {
+        return Arrays.asList(0,0,0);
+    }
 }

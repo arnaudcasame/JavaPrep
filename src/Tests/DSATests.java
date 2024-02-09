@@ -206,12 +206,15 @@ class DSATests {
 		private RandomizedSet randomizedSet;
 		private ArrayOperator arrayOperator;
 
+		private ArrayHelper<Integer> arrayHelperForInt;
+
 		@BeforeEach
 		void setUp() {
 			calculator = new LeetCalculator();
 			stringOperator = new StringOperator();
 			randomizedSet = new RandomizedSet();
 			arrayOperator = new ArrayOperator();
+			arrayHelperForInt = new ArrayHelper<Integer>();
 		}
 
 		@Test
@@ -401,6 +404,14 @@ class DSATests {
 		void perfectSquares279() {
 			assertAll(() -> assertEquals(3, calculator.numSquares(12)),
 					() -> assertEquals(2, calculator.numSquares(13)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Largest Divisible Subset - 368")
+		void largestDivisibleSubset368() {
+			assertAll(() -> assertArrayEquals(new Integer[]{1, 2}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 3}))),
+					() -> assertArrayEquals(new Integer[]{1, 2, 4, 8}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 4, 8}))));
 		}
 	}
 
