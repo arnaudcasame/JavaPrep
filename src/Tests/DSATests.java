@@ -410,7 +410,7 @@ class DSATests {
 		@DisplayName("Largest Divisible Subset - 368")
 		void largestDivisibleSubset368() {
 			assertAll(() -> assertArrayEquals(new Integer[]{1, 2}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 3}))),
-//					() -> assertArrayEquals(new Integer[]{4, 8, 16}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{3, 4, 16, 8}))),
+					() -> assertArrayEquals(new Integer[]{4, 8, 16}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{3, 4, 16, 8}))),
 					() -> assertArrayEquals(new Integer[]{4, 8, 16}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{3, 4, 8, 16}))),
 					() -> assertArrayEquals(new Integer[]{1, 2, 4, 8}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 4, 8}))));
 		}
