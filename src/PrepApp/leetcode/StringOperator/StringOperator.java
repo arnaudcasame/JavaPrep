@@ -97,4 +97,8 @@ public class StringOperator {
         }
         return res;
     }
+
+    public int countSubstrings(String s) {
+        return 0;
+    }
 }
