@@ -409,6 +409,14 @@ class DSATests {
 			assertAll(() -> assertArrayEquals(new Integer[]{1, 2}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 3}))),
 					() -> assertArrayEquals(new Integer[]{1, 2, 4, 8}, arrayHelperForInt.fromListToArray(arrayOperator.largestDivisibleSubset(new int[]{1, 2, 4, 8}))));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Palindromic Substrings - 647")
+		void palindromicSubstrings647() {
+			assertAll(() -> assertEquals(3, stringOperator.countSubstrings("abc")),
+			() -> assertEquals(6, stringOperator.countSubstrings("aaa")));
+		}
 	}
 
 }

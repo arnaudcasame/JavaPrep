@@ -21,4 +21,8 @@ public class StringOperator {
     public String frequencySort(String s) {
         return "";
     }
+
+    public int countSubstrings(String s) {
+        return 0;
+    }
 }
