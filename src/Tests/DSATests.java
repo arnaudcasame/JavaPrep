@@ -416,7 +416,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Palindromic Substrings - 647")
 		void palindromicSubstrings647() {
 			assertAll(() -> assertEquals(3, stringOperator.countSubstrings("abc")),

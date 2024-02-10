@@ -1,5 +1,7 @@
 package PrepApp.leetcode.StringOperator;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class StringOperator {
@@ -99,6 +101,32 @@ public class StringOperator {
     }
 
     public int countSubstrings(String s) {
-        return 0;
+        int i = 0, j = 0;
+        List<String> bucket = new ArrayList<>();
+        while (i < s.length()) {
+            String tmp = s.substring(i, j);
+            if(!tmp.isEmpty() && isPalindrome(tmp)){
+                bucket.add(tmp);
+            }
+            if(j == s.length()){
+                i++;
+                j = i;
+            }else{
+                j++;
+            }
+        }
+        System.out.println(bucket);
+        return bucket.size();
+    }
+
+    private boolean isPalindrome(String substr){
+        for (int i = 0; i < substr.length(); i++) {
+            int left = i;
+            int right = substr.length() - 1 - i;
+            if(substr.charAt(left) != substr.charAt(right)){
+                return false;
+            }
+        }
+        return true;
     }
 }
