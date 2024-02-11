@@ -417,6 +417,14 @@ class DSATests {
 			assertAll(() -> assertEquals(3, stringOperator.countSubstrings("abc")),
 			() -> assertEquals(6, stringOperator.countSubstrings("aaa")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Longest Palindromic Substring-5")
+		void longestPalindromicSubstring5() {
+			assertAll(() -> assertEquals("bab", stringOperator.longestPalindrome("babad")),
+			() -> assertEquals("bb", stringOperator.longestPalindrome("cbbd")));
+		}
 	}
 
 }

@@ -25,4 +25,8 @@ public class StringOperator {
     public int countSubstrings(String s) {
         return 0;
     }
+
+    public String longestPalindrome(String s) {
+        return "";
+    }
 }
