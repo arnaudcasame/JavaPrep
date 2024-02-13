@@ -438,7 +438,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Majority Element - 169")
 		void majorityElement169() {
 			assertAll(() -> assertEquals(3, calculator.majorityElement(new int[]{3, 2, 3})),

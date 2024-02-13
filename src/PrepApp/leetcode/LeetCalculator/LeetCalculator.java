@@ -130,6 +130,13 @@ public class LeetCalculator {
     }
 
     public int majorityElement(int[] nums) {
-        return 0;
+        int majority = 0, item = 0;
+        for(int num: nums){
+            if(majority == 0){
+                item = num;
+            }
+            majority += num == item ? 1 : -1;
+        }
+        return item;
     }
 }
