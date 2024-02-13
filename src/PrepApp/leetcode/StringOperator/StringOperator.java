@@ -120,9 +120,12 @@ public class StringOperator {
     }
 
     private boolean isPalindrome(String substr){
-        for (int i = 0; i < substr.length(); i++) {
+        int len = substr.length();
+        int n = len%2 == 0 ? (len/2)+1 : Math.round(len/2)+1 ;
+        for (int i = 0; i < n; i++) {
             int left = i;
-            int right = substr.length() - 1 - i;
+            int right = len - 1 - i;
+//            System.out.println(substr + "\nlength: " + len + "\nn: " + n + "\n" + left + " <--> " + right + "\n" + "----------------");
             if(substr.charAt(left) != substr.charAt(right)){
                 return false;
             }
@@ -136,6 +139,11 @@ public class StringOperator {
 
     public String firstPalindrome(String[] words) {
         /* Problem #2108 */
+        for(String word: words){
+            if(isPalindrome(word)){
+                return word;
+            }
+        }
         return "";
     }
 }

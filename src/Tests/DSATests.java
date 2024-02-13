@@ -430,7 +430,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Find First Palindromic String in Array - 2108")
 		void findFirstPalindromicStringInArray2108() {
 			assertAll(() -> assertEquals("ada", stringOperator.firstPalindrome(new String[]{"abc", "car", "ada", "racecar", "cool"})),
