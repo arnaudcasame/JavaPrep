@@ -29,4 +29,9 @@ public class StringOperator {
     public String longestPalindrome(String s) {
         return "";
     }
+
+    public String firstPalindrome(String[] words) {
+        /* Problem #2108 */
+        return "";
+    }
 }
