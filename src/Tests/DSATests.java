@@ -436,6 +436,14 @@ class DSATests {
 					() -> assertEquals("racecar", stringOperator.firstPalindrome(new String[]{"notapalindrome", "racecar"})),
 					() -> assertEquals("", stringOperator.firstPalindrome(new String[]{"def", "ghi"})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Majority Element - 169")
+		void majorityElement169() {
+			assertAll(() -> assertEquals(3, calculator.majorityElement(new int[]{3, 2, 3})),
+					() -> assertEquals(2, calculator.majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2})));
+		}
 	}
 
 }

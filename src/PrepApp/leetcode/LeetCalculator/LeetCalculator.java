@@ -128,4 +128,8 @@ public class LeetCalculator {
         }
         return dp[n];
     }
+
+    public int majorityElement(int[] nums) {
+        return 0;
+    }
 }
