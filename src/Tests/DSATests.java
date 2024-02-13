@@ -205,7 +205,6 @@ class DSATests {
 		private LeetCalculator calculator;
 		private RandomizedSet randomizedSet;
 		private ArrayOperator arrayOperator;
-
 		private ArrayHelper<Integer> arrayHelperForInt;
 
 		@BeforeEach
@@ -419,7 +418,24 @@ class DSATests {
 		@DisplayName("Palindromic Substrings - 647")
 		void palindromicSubstrings647() {
 			assertAll(() -> assertEquals(3, stringOperator.countSubstrings("abc")),
-			() -> assertEquals(6, stringOperator.countSubstrings("aaa")));
+					() -> assertEquals(6, stringOperator.countSubstrings("aaa")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Longest Palindromic Substring-5")
+		void longestPalindromicSubstring5() {
+			assertAll(() -> assertEquals("bab", stringOperator.longestPalindrome("babad")),
+					() -> assertEquals("bb", stringOperator.longestPalindrome("cbbd")));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Find First Palindromic String in Array - 2108")
+		void findFirstPalindromicStringInArray2108() {
+			assertAll(() -> assertEquals("ada", stringOperator.firstPalindrome(new String[]{"abc", "car", "ada", "racecar", "cool"})),
+					() -> assertEquals("racecar", stringOperator.firstPalindrome(new String[]{"notapalindrome", "racecar"})),
+					() -> assertEquals("", stringOperator.firstPalindrome(new String[]{"def", "ghi"})));
 		}
 	}
 
