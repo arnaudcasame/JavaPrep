@@ -42,4 +42,8 @@ public class LeetCalculator {
     public int numSquares(int n) {
         return 0;
     }
+
+    public int majorityElement(int[] nums) {
+        return 0;
+    }
 }
