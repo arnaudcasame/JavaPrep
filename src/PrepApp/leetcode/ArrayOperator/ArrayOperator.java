@@ -76,6 +76,19 @@ public class ArrayOperator {
     }
 
     public int[] rearrangeArray(int[] nums) {
-        return new int[]{};
+        int[] bucket =  new int[nums.length];
+        int p = 0, n = 1;
+        for (int i = 0; i < nums.length; i++) {
+            int tmp = nums[i];
+            if(tmp < 0){
+                bucket[n] = tmp;
+                n += 2;
+            }else{
+                bucket[p] = tmp;
+                p += 2;
+            }
+        }
+//        System.out.println(Arrays.toString(bucket));
+        return bucket;
     }
 }

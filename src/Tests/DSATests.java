@@ -445,7 +445,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Rearrange Array Elements By Sign - 2149")
 		void rearrangeArrayElementsBySign2149() {
 			assertAll(() -> assertArrayEquals(new int[]{3, -2, 1, -5, 2, -4}, arrayOperator.rearrangeArray(new int[]{3, 1, -2, -5, 2, -4})),
