@@ -443,6 +443,14 @@ class DSATests {
 			assertAll(() -> assertEquals(3, calculator.majorityElement(new int[]{3, 2, 3})),
 					() -> assertEquals(2, calculator.majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Rearrange Array Elements By Sign - 2149")
+		void rearrangeArrayElementsBySign2149() {
+			assertAll(() -> assertArrayEquals(new int[]{3, -2, 1, -5, 2, -4}, arrayOperator.rearrangeArray(new int[]{3, 1, -2, -5, 2, -4})),
+					() -> assertArrayEquals(new int[]{1, -1}, arrayOperator.rearrangeArray(new int[]{-1, 1})));
+		}
 	}
 
 }

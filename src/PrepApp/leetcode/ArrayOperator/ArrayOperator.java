@@ -74,4 +74,8 @@ public class ArrayOperator {
         cache.put(i, res);
         return res;
     }
+
+    public int[] rearrangeArray(int[] nums) {
+        return new int[]{};
+    }
 }
