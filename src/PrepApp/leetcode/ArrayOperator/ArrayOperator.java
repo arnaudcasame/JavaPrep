@@ -15,4 +15,8 @@ public class ArrayOperator {
     public List<Integer> largestDivisibleSubset(int[] nums) {
         return Arrays.asList(0,0,0);
     }
+
+    public int[] rearrangeArray(int[] nums) {
+        return new int[]{};
+    }
 }
