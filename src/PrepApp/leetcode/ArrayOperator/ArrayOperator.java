@@ -93,6 +93,22 @@ public class ArrayOperator {
     }
 
     public long largestPerimeter(int[] nums) {
-        return 0;
+        Arrays.sort(nums);
+        long sum = 0;
+        int longestSide = 0;
+        long max = -1;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        for (int i = nums.length-1; i >= 0; i--) {
+            longestSide = nums[i];
+            sum = sum - longestSide;
+
+            if(longestSide < sum){
+                max = Math.max(max, sum + longestSide);
+//                System.out.println("Longest: " + longestSide + ", Sum: " + sum);
+            }
+        }
+        return max;
     }
 }
