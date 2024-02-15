@@ -19,4 +19,8 @@ public class ArrayOperator {
     public int[] rearrangeArray(int[] nums) {
         return new int[]{};
     }
+
+    public long largestPerimeter(int[] nums) {
+        return 0;
+    }
 }
