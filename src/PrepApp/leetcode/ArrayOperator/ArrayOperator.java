@@ -91,4 +91,8 @@ public class ArrayOperator {
 //        System.out.println(Arrays.toString(bucket));
         return bucket;
     }
+
+    public long largestPerimeter(int[] nums) {
+        return 0;
+    }
 }

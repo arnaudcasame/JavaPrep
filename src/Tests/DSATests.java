@@ -450,6 +450,15 @@ class DSATests {
 			assertAll(() -> assertArrayEquals(new int[]{3, -2, 1, -5, 2, -4}, arrayOperator.rearrangeArray(new int[]{3, 1, -2, -5, 2, -4})),
 					() -> assertArrayEquals(new int[]{1, -1}, arrayOperator.rearrangeArray(new int[]{-1, 1})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Find Polygon With the Largest Perimeter - 2971")
+		void findPolygonWithTheLargestPerimeter2971() {
+			assertAll(() -> assertEquals(15, arrayOperator.largestPerimeter(new int[]{5, 5, 5})),
+					() -> assertEquals(12, arrayOperator.largestPerimeter(new int[]{1, 12, 1, 2, 5, 50, 3})),
+					() -> assertEquals(-1, arrayOperator.largestPerimeter(new int[]{5, 5, 50})));
+		}
 	}
 
 }
