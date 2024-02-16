@@ -2,6 +2,7 @@ package PrepApp.leetcode.ArrayOperator;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArrayOperator {
     public boolean uniqueOccurrences(int[] arr) {
@@ -113,6 +114,65 @@ public class ArrayOperator {
     }
 
     public int findLeastNumOfUniqueInts(int[] arr, int k) {
-        return 0;
+//        HashMap<Integer, Integer> bucket = new HashMap<>();
+//        for (int i = 0; i < arr.length; i++) {
+//            bucket.put(arr[i], bucket.getOrDefault(arr[i], 0)+1);
+//        }
+//        int j = 0;
+//        Integer[] keys = bucket.keySet().toArray(Integer[]::new);
+//        Integer[] numbers = bucket.values().toArray(Integer[]::new);
+//        Arrays.sort(numbers);
+//        int index = 0;
+//        System.out.println("------------------------------");
+//        System.out.println(bucket);
+//        while(k > 0){
+//            int tmp = numbers[index];
+//            int key = keys[j];
+//            if(bucket.getOrDefault(key, 0) == tmp){
+//                if(bucket.get(key) == 1){
+//                    bucket.remove(key);
+//                }else{
+//                    bucket.put(key, bucket.get(key) - 1);
+//                }
+//                numbers = bucket.values().toArray(Integer[]::new);
+//                Arrays.sort(numbers);
+//                k--;
+//            }
+//            if(j == keys.length-1){
+//                j=0;
+//            }else{
+//                j++;
+//            }
+//        }
+//        System.out.println(bucket);
+//        return bucket.keySet().size();
+
+        HashMap<Integer, Integer> bucket = new HashMap<>();
+        for(int item: arr){
+            bucket.put(item, bucket.getOrDefault(item, 0)+1);
+        }
+
+        int[] freqList = new int[arr.length+1];
+        Arrays.fill(freqList, 0);
+
+        for(int key: bucket.keySet()){
+            freqList[bucket.get(key)] += 1;
+        }
+
+        int result = bucket.size();
+
+        for (int i = 1; i < freqList.length; i++) {
+            int remove = freqList[i];
+            if(k >= i * remove){
+                k -= i * remove;
+                result -= remove;
+            }else{
+                remove = (int) k/i;
+                result -= remove;
+                break;
+            }
+        }
+
+        return result;
     }
 }
