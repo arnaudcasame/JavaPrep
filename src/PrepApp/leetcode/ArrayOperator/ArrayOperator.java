@@ -111,4 +111,8 @@ public class ArrayOperator {
         }
         return max;
     }
+
+    public int findLeastNumOfUniqueInts(int[] arr, int k) {
+        return 0;
+    }
 }
