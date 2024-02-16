@@ -458,6 +458,14 @@ class DSATests {
 					() -> assertEquals(12, arrayOperator.largestPerimeter(new int[]{1, 12, 1, 2, 5, 50, 3})),
 					() -> assertEquals(-1, arrayOperator.largestPerimeter(new int[]{5, 5, 50})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Least Number of Unique Integers after K removals - 1481")
+		void leastNumberOfUniqueIntegersAfterKRemovals1481() {
+			assertAll(() -> assertEquals(1, arrayOperator.findLeastNumOfUniqueInts(new int[]{5,5,4}, 1)),
+					() -> assertEquals(2, arrayOperator.findLeastNumOfUniqueInts(new int[]{4,3,1,1,3,3,2}, 3)));
+		}
 	}
 
 }

@@ -23,4 +23,8 @@ public class ArrayOperator {
     public long largestPerimeter(int[] nums) {
         return 0;
     }
+
+    public int findLeastNumOfUniqueInts(int[] arr, int k) {
+        return 0;
+    }
 }
