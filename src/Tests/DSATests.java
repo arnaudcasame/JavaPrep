@@ -471,9 +471,12 @@ class DSATests {
 		@Disabled("Enable only to test solution!")
 		@DisplayName("Furthest Building you Can reach - 1642")
 		void furthestBuildingYouCanReach1642() {
-			assertAll(() -> assertEquals(4, arrayOperator.furthestBuilding(new int[]{}, 5, 1)),
-					() -> assertEquals(7, arrayOperator.furthestBuilding(new int[]{}, 10, 2)),
-					() -> assertEquals(3, arrayOperator.furthestBuilding(new int[]{}, 17, 0)));
+			assertAll(() -> assertEquals(4, arrayOperator.furthestBuilding(new int[]{4,2,7,6,9,14,12}, 5, 1)),
+					() -> assertEquals(7, arrayOperator.furthestBuilding(new int[]{4,12,2,7,3,18,20,3,19}, 10, 2)),
+					() -> assertEquals(3, arrayOperator.furthestBuilding(new int[]{14,3,19,3}, 17, 0)),
+					() -> assertEquals(1, arrayOperator.furthestBuilding(new int[]{3,19}, 87, 1)),
+					() -> assertEquals(0, arrayOperator.furthestBuilding(new int[]{1,2}, 0, 0)),
+					() -> assertEquals(5, arrayOperator.furthestBuilding(new int[]{1,5,1,2,3,4,10000}, 4, 1)));
 		}
 	}
 
