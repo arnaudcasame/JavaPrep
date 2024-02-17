@@ -466,6 +466,15 @@ class DSATests {
 			assertAll(() -> assertEquals(1, arrayOperator.findLeastNumOfUniqueInts(new int[]{5,5,4}, 1)),
 					() -> assertEquals(2, arrayOperator.findLeastNumOfUniqueInts(new int[]{4,3,1,1,3,3,2}, 3)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Furthest Building you Can reach - 1642")
+		void furthestBuildingYouCanReach1642() {
+			assertAll(() -> assertEquals(4, arrayOperator.furthestBuilding(new int[]{}, 5, 1)),
+					() -> assertEquals(7, arrayOperator.furthestBuilding(new int[]{}, 10, 2)),
+					() -> assertEquals(3, arrayOperator.furthestBuilding(new int[]{}, 17, 0)));
+		}
 	}
 
 }

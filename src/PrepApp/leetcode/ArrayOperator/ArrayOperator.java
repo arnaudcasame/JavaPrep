@@ -27,4 +27,8 @@ public class ArrayOperator {
     public int findLeastNumOfUniqueInts(int[] arr, int k) {
         return 0;
     }
+
+    public int furthestBuilding(int[] heights, int bricks, int ladders) {
+        return 0;
+    }
 }
