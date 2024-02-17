@@ -175,4 +175,8 @@ public class ArrayOperator {
 
         return result;
     }
+
+    public int furthestBuilding(int[] heights, int bricks, int ladders) {
+        return 0;
+    }
 }
