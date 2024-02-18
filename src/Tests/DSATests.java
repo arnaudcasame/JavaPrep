@@ -478,6 +478,14 @@ class DSATests {
 					() -> assertEquals(0, arrayOperator.furthestBuilding(new int[]{1,2}, 0, 0)),
 					() -> assertEquals(5, arrayOperator.furthestBuilding(new int[]{1,5,1,2,3,4,10000}, 4, 1)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Meeting Rooms III - 2402")
+		void meetingRoomsIii2402() {
+			assertAll(() -> assertEquals(0, arrayOperator.mostBooked(2, new int[][]{{0, 10}, {1, 5}, {2, 7}, {3, 4}})),
+					() -> assertEquals(1, arrayOperator.mostBooked(3, new int[][]{{1, 20}, {2, 10}, {3, 5}, {4, 9}, {6, 8}})));
+		}
 	}
 
 }

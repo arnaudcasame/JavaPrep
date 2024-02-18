@@ -31,4 +31,8 @@ public class ArrayOperator {
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
         return 0;
     }
+
+    public int mostBooked(int n, int[][] meetings) {
+        return 0;
+    }
 }
