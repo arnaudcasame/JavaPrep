@@ -486,6 +486,15 @@ class DSATests {
 			assertAll(() -> assertEquals(0, arrayOperator.mostBooked(2, new int[][]{{0, 10}, {1, 5}, {2, 7}, {3, 4}})),
 					() -> assertEquals(1, arrayOperator.mostBooked(3, new int[][]{{1, 20}, {2, 10}, {3, 5}, {4, 9}, {6, 8}})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Partition Array for Maximum Sum - 1043")
+		void partitionArrayForMaximumSum1043() {
+			assertAll(() -> assertEquals(84, arrayOperator.maxSumAfterPartitioning(new int[]{1, 15, 7, 9, 2, 5, 10}, 3)),
+					() -> assertEquals(83, arrayOperator.maxSumAfterPartitioning(new int[]{1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3}, 4)),
+					() -> assertEquals(1, arrayOperator.maxSumAfterPartitioning(new int[]{1}, 1)));
+		}
 	}
 
 }

@@ -35,4 +35,8 @@ public class ArrayOperator {
     public int mostBooked(int n, int[][] meetings) {
         return 0;
     }
+
+    public int maxSumAfterPartitioning(int[] arr, int k) {
+        return 0;
+    }
 }
