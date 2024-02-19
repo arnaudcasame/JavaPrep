@@ -2,6 +2,7 @@ package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import Helpers.ArrayHelper;
+import PrepApp.leetcode.NumOperator.NumOperator;
 import PrepApp.leetcode.Queue.QueueLikeStack;
 import DSA.TreeNode;
 import Helpers.Helper;
@@ -209,6 +210,7 @@ class DSATests {
 		private RandomizedSet randomizedSet;
 		private ArrayOperator arrayOperator;
 		private ArrayHelper<Integer> arrayHelperForInt;
+		private NumOperator numOperator;
 
 		@BeforeEach
 		void setUp() {
@@ -216,6 +218,7 @@ class DSATests {
 			stringOperator = new StringOperator();
 			randomizedSet = new RandomizedSet();
 			arrayOperator = new ArrayOperator();
+			numOperator = new NumOperator();
 			arrayHelperForInt = new ArrayHelper<Integer>();
 		}
 
@@ -494,6 +497,15 @@ class DSATests {
 			assertAll(() -> assertEquals(84, arrayOperator.maxSumAfterPartitioning(new int[]{1, 15, 7, 9, 2, 5, 10}, 3)),
 					() -> assertEquals(83, arrayOperator.maxSumAfterPartitioning(new int[]{1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3}, 4)),
 					() -> assertEquals(1, arrayOperator.maxSumAfterPartitioning(new int[]{1}, 1)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Power Of Two - 231")
+		void powerOfTwo231() {
+			assertAll(() -> assertTrue(numOperator.isPowerOfTwo(1)),
+					() -> assertTrue(numOperator.isPowerOfTwo(16)),
+					() -> assertFalse(numOperator.isPowerOfTwo(3)));
 		}
 	}
 
