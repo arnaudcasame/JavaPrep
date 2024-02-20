@@ -520,7 +520,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Missing Number - 268")
 		void missingNumber268() {
 			assertAll(() -> assertEquals(2, arrayOperator.missingNumber(new int[]{3, 0, 1})),

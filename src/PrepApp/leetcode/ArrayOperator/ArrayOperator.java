@@ -207,6 +207,13 @@ public class ArrayOperator {
     }
 
     public int missingNumber(int[] nums) {
-        return 0;
+        Set<Integer> bucket = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+
+        for (int i = 0; i < nums.length + 1; i++) {
+            if(!bucket.contains(i)){
+                return i;
+            }
+        }
+        return nums[nums.length-1] + 1;
     }
 }
