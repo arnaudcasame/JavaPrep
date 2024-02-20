@@ -507,6 +507,15 @@ class DSATests {
 					() -> assertTrue(numOperator.isPowerOfTwo(16)),
 					() -> assertFalse(numOperator.isPowerOfTwo(3)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Missing Number - 268")
+		void missingNumber268() {
+			assertAll(() -> assertEquals(2, arrayOperator.missingNumber(new int[]{3, 0, 1})),
+					() -> assertEquals(2, arrayOperator.missingNumber(new int[]{0, 1})),
+					() -> assertEquals(8, arrayOperator.missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1})));
+		}
 	}
 
 }

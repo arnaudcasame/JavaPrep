@@ -39,4 +39,8 @@ public class ArrayOperator {
     public int maxSumAfterPartitioning(int[] arr, int k) {
         return 0;
     }
+
+    public int missingNumber(int[] nums) {
+        return 0;
+    }
 }
