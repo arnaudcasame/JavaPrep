@@ -207,10 +207,14 @@ public class ArrayOperator {
     }
 
     public int missingNumber(int[] nums) {
-        Set<Integer> bucket = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+        HashMap<Integer, Integer> bucket = new HashMap<>();
+
+        for(Integer num: nums){
+            bucket.put(num, 1);
+        }
 
         for (int i = 0; i < nums.length + 1; i++) {
-            if(!bucket.contains(i)){
+            if(bucket.getOrDefault(i, 0) == 0){
                 return i;
             }
         }
