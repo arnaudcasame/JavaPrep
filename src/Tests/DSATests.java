@@ -528,7 +528,6 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
 		@DisplayName("Median of Two Sorted Arrays - 4")
 		void medianOfTwoSortedArrays4() {
 			assertAll(() -> assertEquals(2.00000, arrayOperator.findMedianSortedArrays(new int[]{1,3}, new int[]{2})),

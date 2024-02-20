@@ -222,6 +222,44 @@ public class ArrayOperator {
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        return 0.0;
+        int[] bucket = new int[nums1.length + nums2.length];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while(i < nums1.length && j < nums2.length){
+            if(nums1[i] < nums2[j]){
+                bucket[k] = nums1[i];
+                i++;
+                k++;
+            }else if(nums1[i] == nums2[j]){
+                bucket[k] = nums1[i];
+                k++;
+                bucket[k] = nums2[j];
+                k++;
+                i++;
+                j++;
+            }else{
+                bucket[k] = nums2[j];
+                k++;
+                j++;
+            }
+        }
+
+        while(i < nums1.length){
+            bucket[k] = nums1[i];
+            i++;
+            k++;
+        }
+
+        while(j < nums2.length){
+            bucket[k] = nums2[j];
+            j++;
+            k++;
+        }
+
+        int  n = bucket.length;
+//        System.out.println(Arrays.toString(bucket));
+//        System.out.println(bucket[((int) (n/2))- 1] + " " + bucket[((int) n/2)] + " " + ((double)(bucket[((int) (n/2))- 1] + bucket[((int) n/2)])/2));
+        return n % 2 == 0 ? (double)(bucket[((int) (n/2))- 1] + bucket[((int) n/2)]) / 2 : bucket[(int)(n/2)];
     }
 }
