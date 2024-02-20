@@ -2,6 +2,7 @@ package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import Helpers.ArrayHelper;
+import PrepApp.leetcode.NumOperator.NumOperator;
 import PrepApp.leetcode.Queue.QueueLikeStack;
 import DSA.TreeNode;
 import Helpers.Helper;
@@ -206,6 +207,7 @@ class DSATests {
 		private RandomizedSet randomizedSet;
 		private ArrayOperator arrayOperator;
 		private ArrayHelper<Integer> arrayHelperForInt;
+		private NumOperator numOperator;
 
 		@BeforeEach
 		void setUp() {
@@ -213,6 +215,7 @@ class DSATests {
 			stringOperator = new StringOperator();
 			randomizedSet = new RandomizedSet();
 			arrayOperator = new ArrayOperator();
+			numOperator = new NumOperator();
 			arrayHelperForInt = new ArrayHelper<Integer>();
 		}
 
@@ -481,6 +484,41 @@ class DSATests {
 					() -> assertEquals(1, arrayOperator.furthestBuilding(new int[]{3,19}, 87, 1)),
 					() -> assertEquals(0, arrayOperator.furthestBuilding(new int[]{1,2}, 0, 0)),
 					() -> assertEquals(5, arrayOperator.furthestBuilding(new int[]{1,5,1,2,3,4,10000}, 4, 1)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Meeting Rooms III - 2402")
+		void meetingRoomsIii2402() {
+			assertAll(() -> assertEquals(0, arrayOperator.mostBooked(2, new int[][]{{0, 10}, {1, 5}, {2, 7}, {3, 4}})),
+					() -> assertEquals(1, arrayOperator.mostBooked(3, new int[][]{{1, 20}, {2, 10}, {3, 5}, {4, 9}, {6, 8}})));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Partition Array for Maximum Sum - 1043")
+		void partitionArrayForMaximumSum1043() {
+			assertAll(() -> assertEquals(84, arrayOperator.maxSumAfterPartitioning(new int[]{1, 15, 7, 9, 2, 5, 10}, 3)),
+					() -> assertEquals(83, arrayOperator.maxSumAfterPartitioning(new int[]{1, 4, 1, 5, 7, 3, 6, 1, 9, 9, 3}, 4)),
+					() -> assertEquals(1, arrayOperator.maxSumAfterPartitioning(new int[]{1}, 1)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Power Of Two - 231")
+		void powerOfTwo231() {
+			assertAll(() -> assertTrue(numOperator.isPowerOfTwo(1)),
+					() -> assertTrue(numOperator.isPowerOfTwo(16)),
+					() -> assertFalse(numOperator.isPowerOfTwo(3)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Missing Number - 268")
+		void missingNumber268() {
+			assertAll(() -> assertEquals(2, arrayOperator.missingNumber(new int[]{3, 0, 1})),
+					() -> assertEquals(2, arrayOperator.missingNumber(new int[]{0, 1})),
+					() -> assertEquals(8, arrayOperator.missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1})));
 		}
 	}
 }

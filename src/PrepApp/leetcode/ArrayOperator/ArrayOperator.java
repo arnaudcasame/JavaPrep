@@ -197,4 +197,16 @@ public class ArrayOperator {
         }
         return heights.length - 1;
     }
+
+    public int mostBooked(int n, int[][] meetings) {
+        return 0;
+    }
+
+    public int maxSumAfterPartitioning(int[] arr, int k) {
+        return 0;
+    }
+
+    public int missingNumber(int[] nums) {
+        return 0;
+    }
 }
