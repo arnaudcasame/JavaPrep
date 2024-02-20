@@ -43,4 +43,8 @@ public class ArrayOperator {
     public int missingNumber(int[] nums) {
         return 0;
     }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        return 0.0;
+    }
 }

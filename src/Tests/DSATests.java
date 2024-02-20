@@ -516,6 +516,14 @@ class DSATests {
 					() -> assertEquals(2, arrayOperator.missingNumber(new int[]{0, 1})),
 					() -> assertEquals(8, arrayOperator.missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Median of Two Sorted Arrays - 4")
+		void medianOfTwoSortedArrays4() {
+			assertAll(() -> assertEquals(2.00000, arrayOperator.findMedianSortedArrays(new int[]{1,3}, new int[]{2})),
+					() -> assertEquals(2.50000, arrayOperator.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4})));
+		}
 	}
 
 }
