@@ -222,22 +222,18 @@ public class ArrayOperator {
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] bucket = new int[nums1.length + nums2.length];
+        int n  = nums1.length + nums2.length;
+        int limit = (n/2)+1;
+        int[] bucket = new int[limit];
         int i = 0;
         int j = 0;
         int k = 0;
-        while(i < nums1.length && j < nums2.length){
+
+        while((i < nums1.length && j < nums2.length) && k < limit){
             if(nums1[i] < nums2[j]){
                 bucket[k] = nums1[i];
                 i++;
                 k++;
-            }else if(nums1[i] == nums2[j]){
-                bucket[k] = nums1[i];
-                k++;
-                bucket[k] = nums2[j];
-                k++;
-                i++;
-                j++;
             }else{
                 bucket[k] = nums2[j];
                 k++;
@@ -245,21 +241,20 @@ public class ArrayOperator {
             }
         }
 
-        while(i < nums1.length){
+        while(i < nums1.length && k < limit){
             bucket[k] = nums1[i];
             i++;
             k++;
         }
 
-        while(j < nums2.length){
+        while(j < nums2.length && k < limit){
             bucket[k] = nums2[j];
             j++;
             k++;
         }
 
-        int  n = bucket.length;
-//        System.out.println(Arrays.toString(bucket));
+//        System.out.println(Arrays.toString(bucket) + " " + k);
 //        System.out.println(bucket[((int) (n/2))- 1] + " " + bucket[((int) n/2)] + " " + ((double)(bucket[((int) (n/2))- 1] + bucket[((int) n/2)])/2));
-        return n % 2 == 0 ? (double)(bucket[((int) (n/2))- 1] + bucket[((int) n/2)]) / 2 : bucket[(int)(n/2)];
+        return n % 2 == 0 ? (double)(bucket[k-2] + bucket[k-1]) / 2 : bucket[k-1];
     }
 }

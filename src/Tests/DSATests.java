@@ -531,6 +531,7 @@ class DSATests {
 		@DisplayName("Median of Two Sorted Arrays - 4")
 		void medianOfTwoSortedArrays4() {
 			assertAll(() -> assertEquals(2.00000, arrayOperator.findMedianSortedArrays(new int[]{1,3}, new int[]{2})),
+					() -> assertEquals(3.00000, arrayOperator.findMedianSortedArrays(new int[]{2,2,4,4}, new int[]{2,2,4,4})),
 					() -> assertEquals(2.50000, arrayOperator.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4})));
 		}
 	}
