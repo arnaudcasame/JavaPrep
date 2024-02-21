@@ -524,6 +524,15 @@ class DSATests {
 			assertAll(() -> assertEquals(2.00000, arrayOperator.findMedianSortedArrays(new int[]{1,3}, new int[]{2})),
 					() -> assertEquals(2.50000, arrayOperator.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Bitwise AND of Numbers Range - 201")
+		void bitwiseAndOfNumbersRange201() {
+			assertAll(() -> assertEquals(4, numOperator.rangeBitwiseAnd(5, 7)),
+					() -> assertEquals(0, numOperator.rangeBitwiseAnd(0, 0)),
+					() -> assertEquals(0, numOperator.rangeBitwiseAnd(1, 2147483647)));
+		}
 	}
 
 }
