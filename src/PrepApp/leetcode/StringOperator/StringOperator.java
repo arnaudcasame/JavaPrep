@@ -34,4 +34,8 @@ public class StringOperator {
         /* Problem #2108 */
         return "";
     }
+
+    public String maximumOddBinaryNumber(String s) {
+        return "";
+    }
 }

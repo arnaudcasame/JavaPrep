@@ -533,6 +533,14 @@ class DSATests {
 					() -> assertEquals(0, numOperator.rangeBitwiseAnd(0, 0)),
 					() -> assertEquals(0, numOperator.rangeBitwiseAnd(1, 2147483647)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Maximum Odd Binary Number - 2864")
+		void maximumOddBinaryNumber2864() {
+			assertAll(() -> assertEquals("001", stringOperator.maximumOddBinaryNumber("010")),
+					() -> assertEquals("1001", stringOperator.maximumOddBinaryNumber("0101")));
+		}
 	}
 
 }
