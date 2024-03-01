@@ -148,6 +148,25 @@ public class StringOperator {
     }
 
     public String maximumOddBinaryNumber(String s) {
-        return "";
+        char[] arr = s.toCharArray();
+        int left = 0;
+        int right = 0;
+
+        while(right < arr.length){
+            if(arr[right] == '1'){
+                char tmp = arr[right];
+                arr[right] = arr[left];
+                arr[left] = tmp;
+                left++;
+            }
+            right++;
+        }
+
+        char tmp = arr[arr.length-1];
+        arr[arr.length-1] = arr[left-1];
+        arr[left-1] = tmp;
+
+//        System.out.println(arr);
+        return String.valueOf(arr);
     }
 }

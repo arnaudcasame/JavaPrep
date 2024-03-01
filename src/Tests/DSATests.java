@@ -545,7 +545,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Maximum Odd Binary Number - 2864")
 		void maximumOddBinaryNumber2864() {
 			assertAll(() -> assertEquals("001", stringOperator.maximumOddBinaryNumber("010")),
