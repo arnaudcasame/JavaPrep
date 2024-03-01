@@ -534,6 +534,23 @@ class DSATests {
 					() -> assertEquals(3.00000, arrayOperator.findMedianSortedArrays(new int[]{2,2,4,4}, new int[]{2,2,4,4})),
 					() -> assertEquals(2.50000, arrayOperator.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Bitwise AND of Numbers Range - 201")
+		void bitwiseAndOfNumbersRange201() {
+			assertAll(() -> assertEquals(4, numOperator.rangeBitwiseAnd(5, 7)),
+					() -> assertEquals(0, numOperator.rangeBitwiseAnd(0, 0)),
+					() -> assertEquals(0, numOperator.rangeBitwiseAnd(1, 2147483647)));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Maximum Odd Binary Number - 2864")
+		void maximumOddBinaryNumber2864() {
+			assertAll(() -> assertEquals("001", stringOperator.maximumOddBinaryNumber("010")),
+					() -> assertEquals("1001", stringOperator.maximumOddBinaryNumber("0101")));
+		}
 	}
 }
 

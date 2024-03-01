@@ -146,4 +146,8 @@ public class StringOperator {
         }
         return "";
     }
+
+    public String maximumOddBinaryNumber(String s) {
+        return "";
+    }
 }
