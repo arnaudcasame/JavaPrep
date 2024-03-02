@@ -257,4 +257,8 @@ public class ArrayOperator {
 //        System.out.println(bucket[((int) (n/2))- 1] + " " + bucket[((int) n/2)] + " " + ((double)(bucket[((int) (n/2))- 1] + bucket[((int) n/2)])/2));
         return n % 2 == 0 ? (double)(bucket[k-2] + bucket[k-1]) / 2 : bucket[k-1];
     }
+
+    public int[] sortedSquares(int[] nums) {
+        return new int[]{};
+    }
 }
