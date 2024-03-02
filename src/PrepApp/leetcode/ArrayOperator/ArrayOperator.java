@@ -1,5 +1,7 @@
 package PrepApp.leetcode.ArrayOperator;
 
+import Helpers.ArrayHelper;
+
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -259,6 +261,19 @@ public class ArrayOperator {
     }
 
     public int[] sortedSquares(int[] nums) {
-        return new int[]{};
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            list.add(i, nums[i] * nums[i]);
+        }
+
+        Collections.sort(list);
+
+        int[] sorted = new int[list.size()];
+
+        for (int i = 0; i <list.size(); i++) {
+            sorted[i] = list.get(i);
+        }
+
+        return sorted;
     }
 }

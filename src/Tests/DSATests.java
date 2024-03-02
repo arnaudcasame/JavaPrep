@@ -553,7 +553,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Squares of a Sorted Array-977")
 		void squaresOfASortedArray977() {
 			assertAll(() -> assertArrayEquals(new int[]{0, 1, 9, 16, 100}, arrayOperator.sortedSquares(new int[]{-4, -1, 0, 3, 10})),
