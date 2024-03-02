@@ -541,6 +541,14 @@ class DSATests {
 			assertAll(() -> assertEquals("001", stringOperator.maximumOddBinaryNumber("010")),
 					() -> assertEquals("1001", stringOperator.maximumOddBinaryNumber("0101")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Squares of a Sorted Array-977")
+		void squaresOfASortedArray977() {
+			assertAll(() -> assertArrayEquals(new int[]{0, 1, 9, 16, 100}, arrayOperator.sortedSquares(new int[]{-4, -1, 0, 3, 10})),
+					() -> assertArrayEquals(new int[]{4, 9, 9, 49, 121}, arrayOperator.sortedSquares(new int[]{-7, -3, 2, 3, 11})));
+		}
 	}
 
 }
