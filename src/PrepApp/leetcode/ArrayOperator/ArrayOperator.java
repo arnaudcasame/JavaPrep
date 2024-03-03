@@ -5,6 +5,10 @@ import Helpers.ArrayHelper;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
+import DSA.ListNode;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ArrayOperator {
     public boolean uniqueOccurrences(int[] arr) {
@@ -275,5 +279,9 @@ public class ArrayOperator {
         }
 
         return sorted;
+    }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        return null;
     }
 }
