@@ -1,6 +1,7 @@
 package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 
+import DSA.ListNode;
 import Helpers.ArrayHelper;
 import PrepApp.leetcode.NumOperator.NumOperator;
 import PrepApp.leetcode.Queue.QueueLikeStack;
@@ -548,6 +549,24 @@ class DSATests {
 		void squaresOfASortedArray977() {
 			assertAll(() -> assertArrayEquals(new int[]{0, 1, 9, 16, 100}, arrayOperator.sortedSquares(new int[]{-4, -1, 0, 3, 10})),
 					() -> assertArrayEquals(new int[]{4, 9, 9, 49, 121}, arrayOperator.sortedSquares(new int[]{-7, -3, 2, 3, 11})));
+		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Remove Nth Node From End of List - 19")
+		void removeNthNodeFromEndOfList19() {
+			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,3,4,5});
+			ListNode<Integer> result1 = arrayOperator.removeNthFromEnd(head1, 2);
+
+			ListNode<Integer> head2 = ListNode.fromArray(new int[]{1});
+			ListNode<Integer> result2 = arrayOperator.removeNthFromEnd(head2, 1);
+
+			ListNode<Integer> head3 = ListNode.fromArray(new int[]{1,2});
+			ListNode<Integer> result3 = arrayOperator.removeNthFromEnd(head3, 1);
+
+			assertAll(() -> assertArrayEquals(new int[]{1, 2, 3, 5}, ListNode.toArray(result1)),
+					() -> assertArrayEquals(new int[]{}, ListNode.toArray(result2)),
+					() -> assertArrayEquals(new int[]{1}, ListNode.toArray(result3)));
 		}
 	}
 

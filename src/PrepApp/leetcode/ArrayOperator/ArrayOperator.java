@@ -1,5 +1,7 @@
 package PrepApp.leetcode.ArrayOperator;
 
+import DSA.ListNode;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,5 +52,9 @@ public class ArrayOperator {
 
     public int[] sortedSquares(int[] nums) {
         return new int[]{};
+    }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        return null;
     }
 }
