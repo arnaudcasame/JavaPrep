@@ -57,4 +57,8 @@ public class ArrayOperator {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         return null;
     }
+
+    public int bagOfTokensScore(int[] tokens, int power) {
+        return -1;
+    }
 }

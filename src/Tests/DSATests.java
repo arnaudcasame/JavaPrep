@@ -568,6 +568,15 @@ class DSATests {
 					() -> assertArrayEquals(new int[]{}, ListNode.toArray(result2)),
 					() -> assertArrayEquals(new int[]{1}, ListNode.toArray(result3)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Bag of Tokens - 948")
+		void bagOfTokens948() {
+			assertAll(() -> assertEquals(0, arrayOperator.bagOfTokensScore(new int[]{100}, 50)),
+					() -> assertEquals(1, arrayOperator.bagOfTokensScore(new int[]{200, 100}, 150)),
+					() -> assertEquals(2, arrayOperator.bagOfTokensScore(new int[]{100, 200, 300, 400}, 200)));
+		}
 	}
 
 }
