@@ -23,6 +23,14 @@ public class ListNode<T> {
         this.next = next;
     }
 
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                ", next=" + (next != null ? next.toString() : "null") +
+                '}';
+    }
+
     public static ListNode<Integer> fromArray(int[] arr){
         ListNode<Integer> head = null;
         ListNode<Integer> current = null;
