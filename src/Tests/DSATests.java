@@ -580,11 +580,12 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Bag of Tokens - 948")
 		void bagOfTokens948() {
 			assertAll(() -> assertEquals(0, arrayOperator.bagOfTokensScore(new int[]{100}, 50)),
 					() -> assertEquals(1, arrayOperator.bagOfTokensScore(new int[]{200, 100}, 150)),
+					() -> assertEquals(4, arrayOperator.bagOfTokensScore(new int[]{33,41,10,91,47,84,98,34,48,70}, 43)),
 					() -> assertEquals(2, arrayOperator.bagOfTokensScore(new int[]{100, 200, 300, 400}, 200)));
 		}
 	}

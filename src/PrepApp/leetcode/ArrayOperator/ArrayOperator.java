@@ -304,6 +304,30 @@ public class ArrayOperator {
     }
 
     public int bagOfTokensScore(int[] tokens, int power) {
-        return -1;
+        Arrays.sort(tokens);
+
+        int score = 0;
+        int maxScore = 0;
+
+        int left = 0;
+        int right = tokens.length-1;
+
+        while (left <= right){
+            if(power >= tokens[left]){
+                power -= tokens[left];
+                score += 1;
+                maxScore = Math.max(maxScore, score);
+                left++;
+            }else if (score >= 1) {
+                power += tokens[right];
+                score -= 1;
+                maxScore = Math.max(maxScore, score);
+                right--;
+            }else{
+                break;
+            }
+        }
+
+        return maxScore;
     }
 }
