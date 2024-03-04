@@ -282,6 +282,24 @@ public class ArrayOperator {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        return null;
+        ListNode current = head;
+        int count = 0;
+
+        while (current != null){
+            count += 1;
+            current = current.getNext();
+        }
+
+        if(count - n - 1 < 0){
+            return head.getNext();
+        }
+
+        int i = 0; current = head;
+        while (i < (count - n - 1)) {
+            current = current.getNext();
+            i++;
+        }
+        current.setNext(current.getNext().getNext());
+        return head;
     }
 }

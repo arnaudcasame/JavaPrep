@@ -562,7 +562,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Remove Nth Node From End of List - 19")
 		void removeNthNodeFromEndOfList19() {
 			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,3,4,5});
