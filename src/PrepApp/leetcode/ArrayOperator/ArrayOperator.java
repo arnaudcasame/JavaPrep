@@ -302,4 +302,8 @@ public class ArrayOperator {
         current.setNext(current.getNext().getNext());
         return head;
     }
+
+    public int bagOfTokensScore(int[] tokens, int power) {
+        return -1;
+    }
 }
