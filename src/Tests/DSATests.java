@@ -590,13 +590,14 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Minimum Length of String after deleting similar ends - 1750")
 		void minimumLengthOfStringAfterDeletingSimilarEnds1750() {
 			assertAll(() -> assertEquals(2, stringOperator.minimumLength("ca")),
 					() -> assertEquals(0, stringOperator.minimumLength("cabaabac")),
 					() -> assertEquals(3, stringOperator.minimumLength("aabccabba")),
 					() -> assertEquals(0, stringOperator.minimumLength("abbbbbbbbbbbbbbbbbbba")),
+					() -> assertEquals(0, stringOperator.minimumLength("bbbbbbbbbbbbbbbbbbb")),
 					() -> assertEquals(1, stringOperator.minimumLength("bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb")));
 		}
 	}

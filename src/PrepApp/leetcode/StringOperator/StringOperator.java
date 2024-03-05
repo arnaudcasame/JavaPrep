@@ -171,6 +171,21 @@ public class StringOperator {
     }
 
     public int minimumLength(String s) {
-        return -1;
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right && s.charAt(left) == s.charAt(right)) {
+            char letter = s.charAt(left);
+
+            while (left <= right && letter == s.charAt(left)){
+                left++;
+            }
+
+            while (left <= right && letter == s.charAt(right)){
+                right--;
+            }
+
+        }
+        return left > right ? 0 : right - left + 1;
     }
 }
