@@ -169,4 +169,8 @@ public class StringOperator {
 //        System.out.println(arr);
         return String.valueOf(arr);
     }
+
+    public int minimumLength(String s) {
+        return -1;
+    }
 }
