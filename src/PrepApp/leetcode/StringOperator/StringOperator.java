@@ -38,4 +38,8 @@ public class StringOperator {
     public String maximumOddBinaryNumber(String s) {
         return "";
     }
+
+    public int minimumLength(String s) {
+        return -1;
+    }
 }
