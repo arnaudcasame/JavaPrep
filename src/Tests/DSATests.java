@@ -600,6 +600,14 @@ class DSATests {
 					() -> assertEquals(0, stringOperator.minimumLength("bbbbbbbbbbbbbbbbbbb")),
 					() -> assertEquals(1, stringOperator.minimumLength("bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Count Elements with Maximum Frequency - 3005")
+		void countElementsWithMaximumFrequency3005() {
+			assertAll(() -> assertEquals(4, arrayOperator.maxFrequencyElements(new int[]{1, 2, 2, 3, 1, 4})),
+					() -> assertEquals(5, arrayOperator.maxFrequencyElements(new int[]{1, 2, 3, 4, 5})));
+		}
 	}
 }
 

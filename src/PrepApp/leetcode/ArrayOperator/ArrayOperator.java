@@ -330,4 +330,8 @@ public class ArrayOperator {
 
         return maxScore;
     }
+
+    public int maxFrequencyElements(int[] nums) {
+        return 0;
+    }
 }
