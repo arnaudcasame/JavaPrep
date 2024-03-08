@@ -378,7 +378,19 @@ public class ArrayOperator {
         return nums;
     }
 
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNode<Integer> head) {
+        ListNode<Integer> fastRunner = head;
+
+        while(fastRunner != null && fastRunner.getNext() != null){
+//            System.out.println("S: " + head.getVal() + " - " + fastRunner.getVal());
+            fastRunner = fastRunner.getNext().getNext();
+            head = head.getNext();
+//            if(fastRunner != null) System.out.println("E: " + head.getVal() + " - " + fastRunner.getVal());
+            if(head == fastRunner){
+                return true;
+            }
+        }
+
         return false;
     }
 }
