@@ -610,10 +610,10 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Product of Array Except self - 238")
 		void productOfArrayExceptSelf238() {
-			assertArrayEquals(new int[]{1, 2, 3, 4}, arrayOperator.productExceptSelf(new int[]{24,12,8,6}));
+			assertArrayEquals(new int[]{24,12,8,6}, arrayOperator.productExceptSelf(new int[]{1, 2, 3, 4}));
 			assertArrayEquals(new int[]{0,0,9,0,0}, arrayOperator.productExceptSelf(new int[]{-1, 1, 0, -3, 3}));
 			assertArrayEquals(new int[]{0, 0}, arrayOperator.productExceptSelf(new int[]{0, 0}));
 			assertArrayEquals(new int[]{0, 1}, arrayOperator.productExceptSelf(new int[]{1, 0}));

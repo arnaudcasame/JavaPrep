@@ -4,6 +4,7 @@ import Helpers.ArrayHelper;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.function.DoubleToIntFunction;
 import java.util.stream.Collectors;
 import DSA.ListNode;
 
@@ -351,6 +352,29 @@ public class ArrayOperator {
     }
 
     public int[] productExceptSelf(int[] nums) {
-        return new int[]{};
+        int[] leftBucket = new int[nums.length];
+        int[] rightBucket = new int[nums.length];
+        Arrays.fill(leftBucket, 1);
+        Arrays.fill(rightBucket, 1);
+
+        int rProd = 1;
+        for (int i = nums.length-2; i >= 0; i--) {
+            rProd *= nums[i+1];
+            rightBucket[i] = rProd;
+        }
+
+        int lProd = 1;
+        for (int i = 1; i < nums.length; i++) {
+            lProd *= nums[i-1];
+            leftBucket[i] = lProd;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = leftBucket[i] * rightBucket[i];
+        }
+
+        System.out.println(Arrays.toString(nums));
+
+        return nums;
     }
 }
