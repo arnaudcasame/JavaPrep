@@ -346,7 +346,7 @@ public class ArrayOperator {
                 count += bucket.get(key);
             }
         }
-        System.out.println(count);
+//        System.out.println(count);
         return count;
     }
 }
