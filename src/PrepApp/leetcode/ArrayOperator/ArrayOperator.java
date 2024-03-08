@@ -349,4 +349,8 @@ public class ArrayOperator {
 //        System.out.println(count);
         return count;
     }
+
+    public int[] productExceptSelf(int[] nums) {
+        return new int[]{};
+    }
 }

@@ -608,6 +608,17 @@ class DSATests {
 			assertAll(() -> assertEquals(4, arrayOperator.maxFrequencyElements(new int[]{1, 2, 2, 3, 1, 4})),
 					() -> assertEquals(5, arrayOperator.maxFrequencyElements(new int[]{1, 2, 3, 4, 5})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Product of Array Except self - 238")
+		void productOfArrayExceptSelf238() {
+			assertArrayEquals(new int[]{1, 2, 3, 4}, arrayOperator.productExceptSelf(new int[]{24,12,8,6}));
+			assertArrayEquals(new int[]{0,0,9,0,0}, arrayOperator.productExceptSelf(new int[]{-1, 1, 0, -3, 3}));
+			assertArrayEquals(new int[]{0, 0}, arrayOperator.productExceptSelf(new int[]{0, 0}));
+			assertArrayEquals(new int[]{0, 1}, arrayOperator.productExceptSelf(new int[]{1, 0}));
+			assertArrayEquals(new int[]{0, 0, 0}, arrayOperator.productExceptSelf(new int[]{0, 4, 0}));
+		}
 	}
 }
 
