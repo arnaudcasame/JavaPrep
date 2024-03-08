@@ -644,6 +644,17 @@ class DSATests {
 					() -> assertFalse(arrayOperator.hasCycle(head2)),
 					() -> assertTrue(arrayOperator.hasCycle(head3)));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Middle of the Linked List - 876")
+		void middleOfTheLinkedList876() {
+			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,3,4,5});
+			ListNode<Integer> head2 = ListNode.fromArray(new int[]{1,2,3,4,5,6});
+
+			assertAll(() -> assertArrayEquals(new int[]{3, 4, 5}, ListNode.toArray(arrayOperator.middleNode(head1))),
+					() -> assertArrayEquals(new int[]{4, 5, 6}, ListNode.toArray(arrayOperator.middleNode(head2))));
+		}
 	}
 }
 

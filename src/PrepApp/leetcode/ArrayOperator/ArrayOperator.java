@@ -393,4 +393,8 @@ public class ArrayOperator {
 
         return false;
     }
+
+    public ListNode<Integer> middleNode(ListNode<Integer> head) {
+        return null;
+    }
 }
