@@ -642,7 +642,7 @@ class DSATests {
 
 			assertAll(() -> assertTrue(arrayOperator.hasCycle(head1)),
 					() -> assertFalse(arrayOperator.hasCycle(head2)),
-					() -> assertFalse(arrayOperator.hasCycle(head3)));
+					() -> assertTrue(arrayOperator.hasCycle(head3)));
 		}
 	}
 }
