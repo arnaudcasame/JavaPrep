@@ -65,4 +65,8 @@ public class ArrayOperator {
     public int maxFrequencyElements(int[] nums) {
         return 0;
     }
+
+    public int[] productExceptSelf(int[] nums) {
+        return new int[]{};
+    }
 }
