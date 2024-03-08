@@ -332,6 +332,21 @@ public class ArrayOperator {
     }
 
     public int maxFrequencyElements(int[] nums) {
-        return 0;
+        HashMap<Integer, Integer> bucket = new HashMap<Integer, Integer>();
+        for(int num: nums){
+            bucket.put(num, 1+bucket.getOrDefault(num, 0));
+        }
+        int lastFreq = 0;
+        int count = 0;
+        for(int key: bucket.keySet()){
+            if(bucket.get(key) > lastFreq){
+                count = bucket.get(key);
+                lastFreq = bucket.get(key);
+            }else if(bucket.get(key) == lastFreq){
+                count += bucket.get(key);
+            }
+        }
+        System.out.println(count);
+        return count;
     }
 }
