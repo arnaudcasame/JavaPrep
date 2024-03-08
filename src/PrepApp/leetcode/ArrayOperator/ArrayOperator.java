@@ -377,4 +377,8 @@ public class ArrayOperator {
 
         return nums;
     }
+
+    public boolean hasCycle(ListNode head) {
+        return false;
+    }
 }
