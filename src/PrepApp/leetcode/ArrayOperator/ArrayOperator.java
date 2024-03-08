@@ -73,4 +73,8 @@ public class ArrayOperator {
     public boolean hasCycle(ListNode head) {
         return false;
     }
+
+    public ListNode<Integer> middleNode(ListNode<Integer> head) {
+        return null;
+    }
 }
