@@ -61,4 +61,8 @@ public class ArrayOperator {
     public int bagOfTokensScore(int[] tokens, int power) {
         return -1;
     }
+
+    public int maxFrequencyElements(int[] nums) {
+        return 0;
+    }
 }
