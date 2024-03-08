@@ -625,7 +625,7 @@ class DSATests {
 			// 3rd ListNode
 			ListNode<Integer> tail3 = new ListNode<Integer>(40);
 			ListNode<Integer> cycle3 = new ListNode<Integer>(27, new ListNode<Integer>(34, new ListNode<Integer>(22, new ListNode<Integer>(52, new ListNode<Integer>(35, new ListNode<Integer>(28, tail3))))));
-			tail1.setNext(cycle3);
+			tail3.setNext(cycle3);
 			ListNode<Integer> head3 = new ListNode<Integer>(74, cycle3);
 
 			assertAll(() -> assertTrue(arrayOperator.hasCycle(head1)),
