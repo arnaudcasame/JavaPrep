@@ -646,7 +646,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Middle of the Linked List - 876")
 		void middleOfTheLinkedList876() {
 			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,3,4,5});

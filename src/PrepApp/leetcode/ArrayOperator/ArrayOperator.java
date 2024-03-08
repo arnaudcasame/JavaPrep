@@ -395,6 +395,12 @@ public class ArrayOperator {
     }
 
     public ListNode<Integer> middleNode(ListNode<Integer> head) {
-        return null;
+        ListNode<Integer> fastRunner = head;
+
+        while(fastRunner != null && fastRunner.getNext() != null){
+            fastRunner = fastRunner.getNext().getNext();
+            head = head.getNext();
+        }
+        return head;
     }
 }
