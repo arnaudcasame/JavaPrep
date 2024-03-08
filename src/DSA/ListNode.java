@@ -11,6 +11,11 @@ public class ListNode<T> {
         this.next = next;
     }
 
+    public ListNode(T val) {
+        this.val = val;
+        this.next = null;
+    }
+
     public ListNode<T> getNext() {
         return next;
     }

@@ -607,6 +607,31 @@ class DSATests {
 			assertArrayEquals(new int[]{0, 1}, arrayOperator.productExceptSelf(new int[]{1, 0}));
 			assertArrayEquals(new int[]{0, 0, 0}, arrayOperator.productExceptSelf(new int[]{0, 4, 0}));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Linked List Cycle - 141")
+		void linkedListCycle141() {
+			// 1st ListNode
+			ListNode<Integer> tail1 = new ListNode<Integer>(8);
+			ListNode<Integer> cycle1 = new ListNode<Integer>(2, new ListNode<Integer>(3, new ListNode<Integer>(4, new ListNode<Integer>(5, new ListNode<Integer>(6, new ListNode<Integer>(7, tail1))))));
+			tail1.setNext(cycle1);
+			ListNode<Integer> head1 = new ListNode<Integer>(1, cycle1);
+
+			// 2nd ListNode
+			ListNode<Integer> cycle2 = new ListNode<Integer>(2, new ListNode<Integer>(3, new ListNode<Integer>(4, new ListNode<Integer>(5, new ListNode<Integer>(6, new ListNode<Integer>(7, new ListNode<Integer>(8)))))));
+        	ListNode<Integer> head2 = new ListNode<Integer>(1, cycle2);
+
+			// 3rd ListNode
+			ListNode<Integer> tail3 = new ListNode<Integer>(40);
+			ListNode<Integer> cycle3 = new ListNode<Integer>(27, new ListNode<Integer>(34, new ListNode<Integer>(22, new ListNode<Integer>(52, new ListNode<Integer>(35, new ListNode<Integer>(28, tail3))))));
+			tail1.setNext(cycle3);
+			ListNode<Integer> head3 = new ListNode<Integer>(74, cycle3);
+
+			assertAll(() -> assertTrue(arrayOperator.hasCycle(head1)),
+					() -> assertFalse(arrayOperator.hasCycle(head2)),
+					() -> assertFalse(arrayOperator.hasCycle(head3)));
+		}
 	}
 
 }

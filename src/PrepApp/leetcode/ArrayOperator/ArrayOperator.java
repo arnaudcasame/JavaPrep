@@ -69,4 +69,8 @@ public class ArrayOperator {
     public int[] productExceptSelf(int[] nums) {
         return new int[]{};
     }
+
+    public boolean hasCycle(ListNode head) {
+        return false;
+    }
 }
