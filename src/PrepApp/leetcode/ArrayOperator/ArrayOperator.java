@@ -77,4 +77,8 @@ public class ArrayOperator {
     public ListNode<Integer> middleNode(ListNode<Integer> head) {
         return null;
     }
+
+    public int getCommon(int[] nums1, int[] nums2) {
+        return 0;
+    }
 }
