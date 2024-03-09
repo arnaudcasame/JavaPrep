@@ -188,4 +188,8 @@ public class StringOperator {
         }
         return left > right ? 0 : right - left + 1;
     }
+
+    public String reverseWordsI(String s) {
+        return "";
+    }
 }
