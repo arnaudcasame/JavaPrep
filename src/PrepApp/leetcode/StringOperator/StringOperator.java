@@ -190,6 +190,23 @@ public class StringOperator {
     }
 
     public String reverseWordsI(String s) {
-        return "";
+        String sentence = "";
+        boolean spacing = true;
+        String word = "";
+
+        for (int i = s.length()-1; i >= 0; i--) {
+            char ch = s.charAt(i);
+
+            if (ch != ' ') {
+                word = ch + word;
+                spacing = false;
+            } else if (!spacing && !word.isEmpty()) {
+                sentence = sentence.isEmpty() ? word : sentence + ch + word;
+                word = "";
+                spacing = true;
+            }
+        }
+        sentence = !word.isEmpty() ? (sentence.isEmpty() ? word : sentence + " " + word) : sentence;
+        return sentence;
     }
 }

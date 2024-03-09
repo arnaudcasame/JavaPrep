@@ -666,7 +666,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Reverse Words in a String - 151")
 		void reverseWordsInAString151() {
 			assertAll(() -> assertEquals("blue is sky the", stringOperator.reverseWordsI("the sky is blue")),
