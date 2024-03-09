@@ -42,4 +42,8 @@ public class StringOperator {
     public int minimumLength(String s) {
         return -1;
     }
+
+    public String reverseWordsI(String s) {
+        return "";
+    }
 }

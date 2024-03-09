@@ -652,6 +652,15 @@ class DSATests {
 					() -> assertEquals(2, arrayOperator.getCommon(new int[]{1, 2, 3, 6}, new int[]{2, 3, 4, 5})),
 					() -> assertEquals(1, arrayOperator.getCommon(new int[]{1, 2, 3, 6}, new int[]{1, 2, 3, 4, 5})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Reverse Words in a String - 151")
+		void reverseWordsInAString151() {
+			assertAll(() -> assertEquals("blue is sky the", stringOperator.reverseWordsI("the sky is blue")),
+					() -> assertEquals("world hello", stringOperator.reverseWordsI("  hello world  ")),
+					() -> assertEquals("example good a", stringOperator.reverseWordsI("a good   example")));
+		}
 	}
 
 }
