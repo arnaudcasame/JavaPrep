@@ -657,7 +657,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Minimum Common Value - 2540")
 		void minimumCommonValue2540() {
 			assertAll(() -> assertEquals(2, arrayOperator.getCommon(new int[]{1, 2, 3}, new int[]{2, 4})),
