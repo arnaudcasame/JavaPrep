@@ -655,6 +655,15 @@ class DSATests {
 			assertAll(() -> assertArrayEquals(new int[]{3, 4, 5}, ListNode.toArray(arrayOperator.middleNode(head1))),
 					() -> assertArrayEquals(new int[]{4, 5, 6}, ListNode.toArray(arrayOperator.middleNode(head2))));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Minimum Common Value - 2540")
+		void minimumCommonValue2540() {
+			assertAll(() -> assertEquals(2, arrayOperator.getCommon(new int[]{1, 2, 3}, new int[]{2, 4})),
+					() -> assertEquals(2, arrayOperator.getCommon(new int[]{1, 2, 3, 6}, new int[]{2, 3, 4, 5})),
+					() -> assertEquals(1, arrayOperator.getCommon(new int[]{1, 2, 3, 6}, new int[]{1, 2, 3, 4, 5})));
+		}
 	}
 }
 
