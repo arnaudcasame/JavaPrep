@@ -421,6 +421,23 @@ public class ArrayOperator {
     }
 
     public int[] intersection(int[] nums1, int[] nums2) {
-        return new int[]{};
+        HashSet<Integer> bucket = new HashSet<>();
+        HashSet<Integer> intersect = new HashSet<>();
+        for(int num: nums1){
+            bucket.add(num);
+        }
+
+        for(int num: nums2){
+            if(bucket.contains(num)){
+                intersect.add(num);
+            }
+        }
+
+        int[] result = new int[intersect.size()];
+        int i = 0;
+        for (int num : intersect) {
+            result[i++] = num;
+        }
+        return result;
     }
 }
