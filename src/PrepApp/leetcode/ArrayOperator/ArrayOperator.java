@@ -419,4 +419,8 @@ public class ArrayOperator {
 
         return -1;
     }
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        return new int[]{};
+    }
 }
