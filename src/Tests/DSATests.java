@@ -661,6 +661,14 @@ class DSATests {
 					() -> assertEquals("world hello", stringOperator.reverseWordsI("  hello world  ")),
 					() -> assertEquals("example good a", stringOperator.reverseWordsI("a good   example")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Intersection of Two Arrays - 349")
+		void intersectionOfTwoArrays349() {
+			assertAll(() -> assertArrayEquals(new int[]{2}, arrayOperator.intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2})),
+					() -> assertArrayEquals(new int[]{9, 4}, arrayOperator.intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));
+		}
 	}
 
 }

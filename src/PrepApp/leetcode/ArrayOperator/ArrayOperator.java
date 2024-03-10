@@ -81,4 +81,8 @@ public class ArrayOperator {
     public int getCommon(int[] nums1, int[] nums2) {
         return 0;
     }
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        return new int[]{};
+    }
 }
