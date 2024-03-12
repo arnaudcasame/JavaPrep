@@ -442,6 +442,30 @@ public class ArrayOperator {
     }
 
     public ListNode<Integer> removeZeroSumSublists(ListNode<Integer> head) {
-        return new ListNode<Integer>(0);
+        int cumul = 0;
+        ListNode<Integer> tmp = new ListNode<>(0, head);
+        HashMap<Integer,ListNode<Integer>> bucket = new HashMap<>();
+        bucket.put(0, tmp);
+
+        while(head != null){
+            cumul += head.getVal();
+
+            if(bucket.containsKey(cumul)){
+                ListNode<Integer> tmpRemove = bucket.get(cumul).getNext();
+                int tmpCumul = cumul;
+
+                while(tmpRemove != head){
+                    tmpCumul += tmpRemove.getVal();
+                    bucket.remove(tmpCumul);
+                    tmpRemove = tmpRemove.getNext();
+                }
+                bucket.get(cumul).setNext(head.getNext());
+
+            }else{
+                bucket.put(cumul, head);
+            }
+            head = head.getNext();
+        }
+        return tmp.getNext();
     }
 }

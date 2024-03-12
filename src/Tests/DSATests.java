@@ -683,7 +683,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Remove Zero Sum Consecutive Nodes from Linked List - 1171")
 		void removeZeroSumConsecutiveNodesFromLinkedList1171() {
 			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,-3,3,1});
