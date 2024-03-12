@@ -85,4 +85,8 @@ public class ArrayOperator {
     public int[] intersection(int[] nums1, int[] nums2) {
         return new int[]{};
     }
+
+    public ListNode<Integer> removeZeroSumSublists(ListNode<Integer> head) {
+        return new ListNode<Integer>(0);
+    }
 }
