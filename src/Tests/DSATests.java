@@ -681,6 +681,19 @@ class DSATests {
 			assertAll(() -> assertArrayEquals(new int[]{2}, arrayOperator.intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2})),
 					() -> assertArrayEquals(new int[]{4, 9}, arrayOperator.intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Remove Zero Sum Consecutive Nodes from Linked List - 1171")
+		void removeZeroSumConsecutiveNodesFromLinkedList1171() {
+			ListNode<Integer> head1 = ListNode.fromArray(new int[]{1,2,-3,3,1});
+			ListNode<Integer> head2 = ListNode.fromArray(new int[]{1,2,3,-3,4});
+			ListNode<Integer> head3 = ListNode.fromArray(new int[]{1,2,3,-3,-2});
+
+			assertAll(() -> assertArrayEquals(new int[]{3, 1}, ListNode.toArray(arrayOperator.removeZeroSumSublists(head1))),
+					() -> assertArrayEquals(new int[]{1, 2, 4}, ListNode.toArray(arrayOperator.removeZeroSumSublists(head2))),
+					() -> assertArrayEquals(new int[]{1}, ListNode.toArray(arrayOperator.removeZeroSumSublists(head3))));
+		}
 	}
 }
 

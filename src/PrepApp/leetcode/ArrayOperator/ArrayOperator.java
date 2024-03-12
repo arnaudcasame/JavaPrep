@@ -440,4 +440,8 @@ public class ArrayOperator {
         }
         return result;
     }
+
+    public ListNode<Integer> removeZeroSumSublists(ListNode<Integer> head) {
+        return new ListNode<Integer>(0);
+    }
 }
