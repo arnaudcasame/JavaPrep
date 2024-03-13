@@ -696,7 +696,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Find the Pivot Integer - 2485")
 		void findThePivotInteger2485() {
 			assertAll(() -> assertEquals(6, numOperator.pivotInteger(8)),
