@@ -8,4 +8,8 @@ public class NumOperator {
     public int rangeBitwiseAnd(int left, int right) {
         return 0;
     }
+
+    public int pivotInteger(int n) {
+        return 0;
+    }
 }

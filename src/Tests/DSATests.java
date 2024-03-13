@@ -694,6 +694,15 @@ class DSATests {
 					() -> assertArrayEquals(new int[]{1, 2, 4}, ListNode.toArray(arrayOperator.removeZeroSumSublists(head2))),
 					() -> assertArrayEquals(new int[]{1}, ListNode.toArray(arrayOperator.removeZeroSumSublists(head3))));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Find the Pivot Integer - 2485")
+		void findThePivotInteger2485() {
+			assertAll(() -> assertEquals(6, numOperator.pivotInteger(8)),
+					() -> assertEquals(1, numOperator.pivotInteger(1)),
+					() -> assertEquals(-1, numOperator.pivotInteger(4)));
+		}
 	}
 }
 
