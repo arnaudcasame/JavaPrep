@@ -35,4 +35,8 @@ public class NumOperator {
 //        System.out.println(Arrays.toString(left) + " " + Arrays.toString(right));
         return -1;
     }
+
+    public boolean increasingTriplet(int[] nums) {
+        return false;
+    }
 }
