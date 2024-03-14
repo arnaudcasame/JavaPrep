@@ -211,6 +211,15 @@ public class StringOperator {
     }
 
     public boolean isSubsequence(String s, String t) {
-        return false;
+        int i = 0;
+        int j = 0;
+
+        while(i < t.length() && j < s.length()){
+            if(s.charAt(j) == t.charAt(i)){
+                j++;
+            }
+            i++;
+        }
+        return j == s.length();
     }
 }

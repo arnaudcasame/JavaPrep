@@ -715,7 +715,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Is Subsequence - 392")
 		void isSubsequence392() {
 			assertAll(() -> assertTrue(stringOperator.isSubsequence("abc", "ahbgdc")),
