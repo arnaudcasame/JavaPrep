@@ -698,6 +698,7 @@ class DSATests {
 		void increasingTripletSubsequence334() {
 			assertAll(() -> assertTrue(numOperator.increasingTriplet(new int[]{1, 2, 3, 4, 5})),
 					() -> assertFalse(numOperator.increasingTriplet(new int[]{5, 4, 3, 2, 1})),
+					() -> assertFalse(numOperator.increasingTriplet(new int[]{2,4,-2,-3})),
 					() -> assertTrue(numOperator.increasingTriplet(new int[]{2, 1, 5, 0, 4, 6})));
 		}
 	}
