@@ -37,6 +37,19 @@ public class NumOperator {
     }
 
     public boolean increasingTriplet(int[] nums) {
+        int minimum = (int) Double.POSITIVE_INFINITY;
+        int medium = (int) Double.POSITIVE_INFINITY;
+
+        for(int num: nums) {
+            if(num <= minimum){
+                minimum = num;
+            } else if (num <= medium) {
+                medium = num;
+            }else {
+                return true;
+            }
+        }
+
         return false;
     }
 }
