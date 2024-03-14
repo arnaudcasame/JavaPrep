@@ -46,4 +46,8 @@ public class StringOperator {
     public String reverseWordsI(String s) {
         return "";
     }
+
+    public boolean isSubsequence(String s, String t) {
+        return false;
+    }
 }
