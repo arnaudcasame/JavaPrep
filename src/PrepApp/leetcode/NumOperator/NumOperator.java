@@ -12,4 +12,8 @@ public class NumOperator {
     public int pivotInteger(int n) {
         return 0;
     }
+
+    public boolean increasingTriplet(int[] nums) {
+        return false;
+    }
 }
