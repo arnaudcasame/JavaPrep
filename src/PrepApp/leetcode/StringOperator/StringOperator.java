@@ -209,4 +209,8 @@ public class StringOperator {
         sentence = !word.isEmpty() ? (sentence.isEmpty() ? word : sentence + " " + word) : sentence;
         return sentence;
     }
+
+    public boolean isSubsequence(String s, String t) {
+        return false;
+    }
 }

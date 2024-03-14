@@ -713,6 +713,14 @@ class DSATests {
 					() -> assertFalse(numOperator.increasingTriplet(new int[]{2,4,-2,-3})),
 					() -> assertTrue(numOperator.increasingTriplet(new int[]{2, 1, 5, 0, 4, 6})));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Is Subsequence - 392")
+		void isSubsequence392() {
+			assertAll(() -> assertTrue(stringOperator.isSubsequence("abc", "ahbgdc")),
+					() -> assertFalse(stringOperator.isSubsequence("axc", "ahbgdc")));
+		}
 	}
 }
 
