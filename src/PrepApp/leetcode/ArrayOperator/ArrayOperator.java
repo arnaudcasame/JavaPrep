@@ -470,6 +470,19 @@ public class ArrayOperator {
     }
 
     public int maxArea(int[] height) {
-        return 0;
+        int l = 0; int r = height.length-1;
+        int area = 0;
+
+        while(l < r){
+            int lesser = Math.min(height[r], height[l]);
+            area = Math.max(area, lesser * (r-l));
+
+            if(height[r] < height[l]){
+                r--;
+            }else{
+                l++;
+            }
+        }
+        return area;
     }
 }

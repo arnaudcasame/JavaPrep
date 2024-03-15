@@ -723,7 +723,7 @@ class DSATests {
 		}
 
 		@Test
-		@Disabled("Enable only to test solution!")
+//		@Disabled("Enable only to test solution!")
 		@DisplayName("Container With Most Water - 11")
 		void containerWithMostWater11() {
 			assertAll(() -> assertEquals(49, arrayOperator.maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7})),
