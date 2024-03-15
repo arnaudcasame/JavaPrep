@@ -89,4 +89,8 @@ public class ArrayOperator {
     public ListNode<Integer> removeZeroSumSublists(ListNode<Integer> head) {
         return new ListNode<Integer>(0);
     }
+
+    public int maxArea(int[] height) {
+        return 0;
+    }
 }
