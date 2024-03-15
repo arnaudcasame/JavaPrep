@@ -721,6 +721,17 @@ class DSATests {
 			assertAll(() -> assertTrue(stringOperator.isSubsequence("abc", "ahbgdc")),
 					() -> assertFalse(stringOperator.isSubsequence("axc", "ahbgdc")));
 		}
+
+		@Test
+		@Disabled("Enable only to test solution!")
+		@DisplayName("Container With Most Water - 11")
+		void containerWithMostWater11() {
+			assertAll(() -> assertEquals(49, arrayOperator.maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7})),
+					() -> assertEquals(1, arrayOperator.maxArea(new int[]{1, 1})),
+					() -> assertEquals(1, arrayOperator.maxArea(new int[]{2, 1})),
+					() -> assertEquals(1, arrayOperator.maxArea(new int[]{1, 2})),
+					() -> assertEquals(17, arrayOperator.maxArea(new int[]{2, 3, 4, 5, 18, 17, 6})));
+		}
 	}
 }
 

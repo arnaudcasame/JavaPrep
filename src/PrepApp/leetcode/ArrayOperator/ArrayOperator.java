@@ -468,4 +468,8 @@ public class ArrayOperator {
         }
         return tmp.getNext();
     }
+
+    public int maxArea(int[] height) {
+        return 0;
+    }
 }
